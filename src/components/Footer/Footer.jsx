@@ -145,7 +145,7 @@ function Footer() {
           <p>
 
             © {new Date().getFullYear()} F&H Aligners & Implant Dental Clinic.
-            All Rights Reserved.NextGen Business Agencey
+            All Rights Reserved.NextGen Business Agencey best
 
           </p>
 
