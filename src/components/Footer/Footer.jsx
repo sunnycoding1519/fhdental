@@ -1,160 +1,102 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
+
+import {
+FaInstagram,
+FaYoutube
+} from "react-icons/fa";
 
 import logo from "../../assets/images/logo.png";
 
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaWhatsapp,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+function Footer(){
 
-function Footer() {
-  return (
-    <footer className="footer">
+return(
 
-      <div className="container">
+<footer className="footer">
 
-        <div className="footer-grid">
+<div className="container">
 
-          {/* Logo */}
+<div className="footer-top">
 
-          <div className="footer-about">
+<div className="footer-logo">
 
-            <img src={logo} alt="F&H Dental Clinic" />
+<img
+src={logo}
+alt="F&H Dental"
+/>
 
-            <h2>F&H Aligners & Implant Dental Clinic</h2>
+</div>
 
-            <p>
-              Creating confident smiles with advanced dental care,
-              invisible aligners, implants and cosmetic dentistry.
-            </p>
+<div className="footer-social">
 
-            <div className="footer-social">
+<span>Follow us at</span>
 
-              <a href="#">
-                <FaFacebookF />
-              </a>
+<a href="#">
+<FaInstagram/>
+</a>
 
-              <a href="#">
-                <FaInstagram />
-              </a>
+<a href="#">
+<FaYoutube/>
+</a>
 
-              <a href="#">
-                <FaWhatsapp />
-              </a>
+</div>
 
-            </div>
+</div>
 
-          </div>
+<div className="footer-line"></div>
 
-          {/* Links */}
+<div className="footer-bottom">
 
-          <div>
+<p>
 
-            <h3>Quick Links</h3>
+© 2026 F&H Aligners & Implant Dental Clinic
 
-            <ul>
+</p>
 
-              <li><a href="#home">Home</a></li>
+<div className="footer-links">
 
-              <li><a href="#why">Why Us</a></li>
+<Link to="/whyus">
 
-              <li><a href="#services">Services</a></li>
+About
 
-              <li><a href="#doctor">Doctors</a></li>
+</Link>
 
-              <li><a href="#gallery">Gallery</a></li>
+<Link to="/services">
 
-              <li><a href="#contact">Contact</a></li>
+Services
 
-            </ul>
+</Link>
 
-          </div>
+<Link to="/doctor">
 
-          {/* Services */}
+Doctors
 
-          <div>
+</Link>
 
-            <h3>Our Services</h3>
+<Link to="/contact">
 
-            <ul>
+Contact
 
-              <li>Invisible Aligners</li>
+</Link>
 
-              <li>Dental Implants</li>
+<Link to="/faq">
 
-              <li>Smile Makeover</li>
+FAQ
 
-              <li>Root Canal</li>
+</Link>
 
-              <li>Teeth Whitening</li>
 
-              <li>General Dentistry</li>
+</div>
 
-            </ul>
+</div>
 
-          </div>
+</div>
 
-          {/* Contact */}
+</footer>
 
-          <div>
 
-            <h3>Contact Info</h3>
+);
 
-            <ul className="contact-list">
-
-              <li>
-
-                <FaPhoneAlt />
-
-                <span>+91 XXXXX XXXXX</span>
-
-              </li>
-
-              <li>
-
-                <FaEnvelope />
-
-                <span>info@fhdentalclinic.com</span>
-
-              </li>
-
-              <li>
-
-                <FaMapMarkerAlt />
-
-                <span>
-                  Jamshedpur,
-                  Jharkhand,
-                  India
-                </span>
-
-              </li>
-
-            </ul>
-
-          </div>
-
-        </div>
-
-        <div className="footer-bottom">
-
-          <p>
-
-            © {new Date().getFullYear()} F&H Aligners & Implant Dental Clinic.
-            All Rights Reserved|Powered by NextGen Business Agency
-
-          </p>
-
-        </div>
-
-      </div>
-
-    </footer>
-  );
 }
 
 export default Footer;

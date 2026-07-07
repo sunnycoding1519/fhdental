@@ -1,115 +1,664 @@
-import { FaArrowRight, FaWhatsapp, FaStar, FaCheckCircle, FaUserFriends, FaAward, FaSmile } from "react-icons/fa";
+import { FaArrowRight, FaPhoneAlt, FaChevronDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./Hero.css";
 
+import "./Hero.css";
 import heroImage from "../../assets/images/hero2.png";
+import {
+  FaTooth,
+  FaSmile,
+  FaTeeth,
+  FaMagic,
+  FaClinicMedical
+} from "react-icons/fa";
+{/*import beforeAfter1 from "../../assets/images/before-after1.jpg";*/}
+import doctor2 from "../../assets/images/doctor2.jpg";
 
 function Hero() {
   return (
-    <section className="hero" id="home">
-      <div className="container hero-container">
-        
-        {/* Left Side Content */}
-        <motion.div
-          className="hero-content"
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
+    <>
+    <section
+      className="hero"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.45)), url(${heroImage})`,
+      }}
+    >
+      <div className="hero-overlay"></div>
+
+      <div className="container hero-content">
+
+        <motion.span
+          className="hero-subtitle"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          F&H ALIGNERS & IMPLANT DENTAL CLINIC
+        </motion.span>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/*<div className="hero-tag">
-            <FaCheckCircle className="tag-icon" />
-            <span>Trusted Dental Care Since 2008</span>
-          </div>*/}
+          Creating Beautiful
+          <br />
+          Smiles With
+          <span> Precision & Care.</span>
+        </motion.h1>
 
-          <h1>
-            Creating <span className="gold-text">Beautiful</span> 
-            <br />
-            <span className="gold-text">Smiles</span> With 
-            <br />
-            Precision & Care.
-          </h1>
+        <motion.p
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: .2, duration: .8 }}
+        >
+          Experience premium dental care with advanced aligners,
+          dental implants, smile makeovers and cosmetic dentistry
+          designed to restore your confidence.
+        </motion.p>
 
-          <p>
-            Welcome to <b>F&H Aligners & Implant Dental Clinic</b>. We specialize
-            in Invisible Aligners, Dental Implants, Smile Makeovers and
-            Modern Cosmetic Dentistry using advanced technology.
-          </p>
+        <motion.div
+          className="hero-buttons"
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: .4, duration: .8 }}
+        >
+          <Link
+            to="/contact"
+            className="hero-btn primary-btn"
+          >
+            Book Appointment
 
-          <div className="hero-buttons">
-            <button className="primary-btn">
-              Book Appointment
-              <FaArrowRight />
-            </button>
+            <FaArrowRight />
+          </Link>
 
-            <button className="secondary-btn">
-              <FaWhatsapp className="whatsapp-icon" />
-              WhatsApp Us
-            </button>
-          </div>
+          <a
+            href="tel:+917355095660"
+            className="hero-btn secondary-btn"
+          >
+            <FaPhoneAlt />
 
-          {/* Bottom Stats Card */}
-          <div className="hero-stats-card">
-            <div className="stat-item">
-              <div className="stat-icon-box">
-                <FaUserFriends />
-              </div>
-              <div className="stat-info">
-                <h3>5000+</h3>
-                <span>Happy Patients</span>
-              </div>
-            </div>
-
-            <div className="stat-item">
-              <div className="stat-icon-box">
-                <FaAward />
-              </div>
-              <div className="stat-info">
-                <h3>15+</h3>
-                <span>Years Experience</span>
-              </div>
-            </div>
-
-            <div className="stat-item">
-              <div className="stat-icon-box">
-                <FaSmile />
-              </div>
-              <div className="stat-info">
-                <h3>4.9</h3>
-                <span>Google Rating</span>
-              </div>
-            </div>
-          </div>
+            Call Now
+          </a>
         </motion.div>
 
-        {/* Right Side Image Block */}
         <motion.div
-          className="hero-image-wrapper"
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          className="hero-bottom"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
         >
-          {/* Main Frame containing the photo */}
-          <div className="hero-image-frame">
-            <img src={heroImage} alt="Smiling man undergoing dental checkup" />
-          </div>
+          <span>Scroll Down</span>
 
-          {/* Floating Google Rating Card */}
-          <div className="floating-rating-card">
-            <div className="star-gold-badge">
-              <FaStar />
-            </div>
-            <div className="rating-details">
-              <h2>4.9/5</h2>
-              <div className="stars-row">
-                <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
-              </div>
-              <p>Google Rating</p>
-            </div>
-          </div>
+          <FaChevronDown />
         </motion.div>
 
       </div>
     </section>
+    {/* ===========================================
+          WHY CHOOSE SECTION
+      =========================================== */}
+
+    <section className="why-section">
+
+  <div className="container why-container">
+
+    {/* LEFT */}
+
+    <div className="why-left">
+
+      <span className="section-tag">
+        WHY CHOOSE F&H
+      </span>
+
+      <h2>
+        Why Choose
+        <br />
+        F&H Dental?
+      </h2>
+
+      <p>
+        F&H Dental is a modern dental clinic providing
+        advanced preventive, cosmetic and implant dentistry
+        using a completely digital workflow. Our patient-first
+        philosophy ensures comfortable treatment with
+        precision, transparency and long-term oral health.
+      </p>
+
+      <p>
+        Led by experienced specialists in Orthodontics,
+        Dental Implants and Smile Design, every treatment
+        plan is carefully customized to your dental needs.
+      </p>
+
+    </div>
+
+    {/* RIGHT */}
+
+    <div className="why-right">
+
+      <div className="why-card">
+
+        <div className="why-number">
+          01
+        </div>
+
+        <h3>
+          Experienced Specialists
+        </h3>
+
+        <p>
+          Our experienced dental specialists provide
+          expert care in aligners, implants,
+          cosmetic dentistry and advanced
+          restorative treatments.
+        </p>
+
+      </div>
+
+      <div className="why-card active-card">
+
+        <div className="why-number">
+          02
+        </div>
+
+        <h3>
+          Ethical Patient First
+        </h3>
+
+        <p>
+          Transparent treatment planning,
+          honest recommendations and
+          complete patient education before
+          every procedure.
+        </p>
+
+      </div>
+
+      <div className="why-card active-card">
+
+        <div className="why-number">
+          03
+        </div>
+
+        <h3>
+          Advanced Technology
+        </h3>
+
+        <p>
+          Digital diagnostics, 3D planning,
+          laser dentistry and modern
+          equipment ensure safe,
+          predictable treatment.
+        </p>
+
+      </div>
+
+      <div className="why-card">
+
+        <div className="why-number">
+          04
+        </div>
+
+        <h3>
+          Tailored Experience
+        </h3>
+
+        <p>
+          Every patient receives a customized
+          treatment experience in a calm,
+          premium and stress-free environment.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+{/* ==========================================
+        DENTAL TREATMENTS
+========================================== */}
+
+<section className="treatments-section">
+
+<div className="container">
+
+<div className="treatments-heading">
+
+<span className="section-tag">
+
+OUR TREATMENTS
+
+</span>
+
+<h2>
+
+Dental Treatments
+
+<span> We Offer</span>
+
+</h2>
+
+<p>
+
+Our specialists frequently treat patients seeking dental implants,
+clear aligners, wisdom tooth surgery and cosmetic smile corrections.
+Every treatment is designed to be comfortable, precise and completely
+personalized.
+
+</p>
+
+</div>
+
+<div className="treatments-grid">
+
+<div className="treatment-card">
+
+<div className="treatment-icon">
+
+<FaSmile/>
+
+</div>
+
+<h3>Braces & Aligners</h3>
+
+<p>
+
+Straighten your teeth comfortably using modern braces
+and clear aligners.
+
+</p>
+
+<button>
+
+Learn More
+
+<FaArrowRight/>
+
+</button>
+
+</div>
+
+<div className="treatment-card active-treatment">
+
+<div className="treatment-icon">
+
+<FaTooth/>
+
+</div>
+
+<h3>Dental Implants</h3>
+
+<p>
+
+Permanent tooth replacement using advanced implant
+technology.
+
+</p>
+
+<button>
+
+Learn More
+
+<FaArrowRight/>
+
+</button>
+
+</div>
+
+<div className="treatment-card">
+
+<div className="treatment-icon">
+
+<FaMagic/>
+
+</div>
+
+<h3>Smile Makeover</h3>
+
+<p>
+
+Enhance your smile through veneers, whitening
+and cosmetic dentistry.
+
+</p>
+
+<button>
+
+Learn More
+
+<FaArrowRight/>
+
+</button>
+
+</div>
+
+<div className="treatment-card">
+
+<div className="treatment-icon">
+
+<FaTeeth/>
+
+</div>
+
+<h3>Teeth Whitening</h3>
+
+<p>
+
+Professional whitening treatments for a brighter
+and confident smile.
+
+</p>
+
+<button>
+
+Learn More
+
+<FaArrowRight/>
+
+</button>
+
+</div>
+
+<div className="treatment-card">
+
+<div className="treatment-icon">
+
+<FaClinicMedical/>
+
+</div>
+
+<h3>Laser Dentistry</h3>
+
+<p>
+
+Minimally invasive laser procedures with faster
+healing and precision.
+
+</p>
+
+<button>
+
+Learn More
+
+<FaArrowRight/>
+
+</button>
+
+</div>
+
+<div className="treatment-card">
+
+<div className="treatment-icon">
+
+<FaTooth/>
+
+</div>
+
+<h3>Dental Filling</h3>
+
+<p>
+
+Natural looking restorations using advanced
+biomimetic materials.
+
+</p>
+
+<button>
+
+Learn More
+
+<FaArrowRight/>
+
+</button>
+
+</div>
+
+</div>
+<div className="treatments-footer">
+
+  <Link
+    to="/services"
+    className="view-services"
+  >
+
+    View All Services
+
+    <FaArrowRight />
+
+  </Link>
+
+</div>
+
+</div>
+
+</section>
+
+    {/* ===========================================
+      REAL SMILE TRANSFORMATIONS
+=========================================== */}
+
+<section className="transform-section">
+
+<div className="container transform-container">
+
+<div className="transform-left">
+
+<span className="section-tag">
+
+REAL SMILE STORIES
+
+</span>
+
+<h2>
+
+Real Smile
+
+<span> Transformations</span>
+
+</h2>
+
+<p>
+
+Smile transformations from patients treated with
+clear aligners, smile makeover procedures,
+dental implants and restorative dentistry.
+
+Every smile is designed to restore confidence,
+improve oral health and create natural aesthetics.
+
+</p>
+
+<div className="transform-list">
+
+<div>
+
+✔ Clear Aligners
+
+</div>
+
+<div>
+
+✔ Smile Makeovers
+
+</div>
+
+<div>
+
+✔ Dental Implants
+
+</div>
+
+<div>
+
+✔ Cosmetic Dentistry
+
+</div>
+
+<div>
+
+✔ Full Mouth Rehabilitation
+
+</div>
+
+</div>
+
+<Link
+
+to="/gallery"
+
+className="transform-btn"
+
+>
+
+View More Cases
+
+<FaArrowRight/>
+
+</Link>
+
+</div>
+
+
+
+{/*==========================
+        RIGHT
+==========================*/}
+
+{/*<div className="transform-right">
+
+<div className="before-after-slider">
+
+<img
+
+src={beforeAfter1}
+
+alt="Before After"
+
+/>
+
+<div className="slider-badge">
+
+Before
+
+</div>
+
+<div className="slider-badge after">
+
+After
+
+</div>
+
+</div>
+
+
+
+<div className="slider-controls">
+
+<button>
+
+◀
+
+</button>
+
+<button>
+
+▶
+
+</button>
+
+</div>*
+
+</div>*/}
+
+</div>
+
+</section>
+
+{/*=========================================
+        TRUSTED DENTISTS
+==========================================*/}
+
+<section className="dentist-section">
+
+<div className="container dentist-container">
+
+<div className="dentist-left">
+
+<span className="section-tag">
+OUR DOCTORS
+</span>
+
+<h2>
+
+Meet your Trusted
+<br />
+
+Dentists in
+<br />
+
+Jamshedpur
+
+</h2>
+
+<p>
+
+If you are looking for a dentist in Jamshedpur, our clinic provides specialist care
+for both routine and advanced dental treatments.
+
+</p>
+
+<Link
+to="/doctor"
+className="dentist-btn"
+>
+
+View All Doctors
+
+<FaArrowRight/>
+
+</Link>
+
+</div>
+
+
+<div className="dentist-right">
+
+<img
+
+src={doctor2}
+
+alt="F&H Dental Doctors"
+
+/>
+<div className="experience-card">
+
+<div className="exp-icon">
+
+🏆
+
+</div>
+
+<div className="exp-text">
+
+<h3>15+</h3>
+
+<span>Years Experience</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+</>
+
   );
 }
 

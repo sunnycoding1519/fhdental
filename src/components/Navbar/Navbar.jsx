@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 
 import "./Navbar.css";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logooo.png";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +15,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScroll(window.scrollY > 60);
+      setScroll(window.scrollY > 40);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -30,8 +30,6 @@ function Navbar() {
 
   return (
     <>
-      {/* Overlay */}
-
       <div
         className={`nav-overlay ${
           menuOpen ? "show-overlay" : ""
@@ -46,8 +44,7 @@ function Navbar() {
       >
         <div className="container nav-container">
 
-          {/* Logo */}
-
+          {/* ================= Logo ================= */}
           <Link
             to="/"
             className="logo"
@@ -55,12 +52,17 @@ function Navbar() {
           >
             <img
               src={logo}
-              alt="F&H Aligners & Implant Dental Clinic"
+              alt="F&H Aligners & Implant"
             />
+
+            <div className="logo-content">
+              <h2>F&amp;H</h2>
+              <span>Aligners &amp; Implant</span>
+              <small>Dental Clinic</small>
+            </div>
           </Link>
 
-          {/* Menu */}
-
+          {/* ================= Menu ================= */}
           <nav
             className={`nav-menu ${
               menuOpen ? "active" : ""
@@ -69,40 +71,22 @@ function Navbar() {
             <NavLink to="/" end onClick={closeMenu}>
               Home
             </NavLink>
-
-            <NavLink to="/why-us" onClick={closeMenu}>
-              Why Us
+            <NavLink to="/WhyUs" onClick={closeMenu}>
+              About
             </NavLink>
-
             <NavLink to="/services" onClick={closeMenu}>
               Services
             </NavLink>
-
             <NavLink to="/doctor" onClick={closeMenu}>
               Doctors
             </NavLink>
-
-            <NavLink to="/gallery" onClick={closeMenu}>
-              Gallery
-            </NavLink>
-
-            <NavLink to="/reviews" onClick={closeMenu}>
-              Reviews
-            </NavLink>
-
-            <NavLink to="/faq" onClick={closeMenu}>
-              FAQ
-            </NavLink>
-
             <NavLink to="/contact" onClick={closeMenu}>
               Contact
             </NavLink>
           </nav>
 
-          {/* Right */}
-
+          {/* ================= Right ================= */}
           <div className="nav-right">
-
             <Link
               to="/contact"
               className="book-btn"
@@ -113,13 +97,11 @@ function Navbar() {
 
             <button
               className="menu-icon"
-              onClick={() =>
-                setMenuOpen(!menuOpen)
-              }
+              aria-label="Toggle navigation menu"
+              onClick={() => setMenuOpen(!menuOpen)}
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
-
           </div>
 
         </div>
