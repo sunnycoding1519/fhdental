@@ -616,7 +616,7 @@ Orthodontist
 
 <h3>
 
-Dr. Sakshi Sachdeva
+Dr. Hazra
 
 </h3>
 
@@ -679,7 +679,7 @@ Implantologist
 
 <h3>
 
-Dr. Sanchit Mahajan
+Dr. Fida
 
 </h3>
 
