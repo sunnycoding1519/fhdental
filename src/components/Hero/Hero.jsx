@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 {/*import beforeAfter1 from "../../assets/images/before-after1.jpg";*/}
 import doctor2 from "../../assets/images/doctor2.jpg";
+import directorImage from "../../assets/images/doctor2.jpg";
 
 function Hero() {
   return (
@@ -114,15 +115,13 @@ function Hero() {
       <h2>
         Why Choose
         <br />
-        F&H Dental?
+        F&H ?
       </h2>
 
       <p>
-        F&H Dental is a modern dental clinic providing
-        advanced preventive, cosmetic and implant dentistry
-        using a completely digital workflow. Our patient-first
-        philosophy ensures comfortable treatment with
-        precision, transparency and long-term oral health.
+        At F&H Dental, we redefine luxury dental care with a perfect blend of advanced technology, specialist expertise, and unmatched comfort.
+        From advanced Clear Aligner Systems for a discreet smile transformation, to precision Dental Implants that restore confidence and function, from bespoke Smile Designing for a flawless, natural look, to Oral & Maxillofacial Surgeries performed with the highest standards of safety and care.
+        We also offer premium Zirconia Crowns & Prosthesis crafted with exceptional precision, aesthetics, and durability - because you deserve nothing less than excellence.
       </p>
 
       <p>
@@ -217,11 +216,135 @@ function Hero() {
   </div>
 
 </section>
+{/*==========================================
+        MESSAGE FROM DIRECTOR
+===========================================*/}
+
+<section className="director-section">
+
+  <div className="container director-container">
+
+    {/* LEFT IMAGE */}
+
+    <div className="director-image">
+
+      {/* Replace with Dr. Fida Image */}
+
+      <img
+        src={directorImage}
+        alt="Dr. Fida"
+      />
+
+      <div className="director-badge">
+
+        Director & Invisalign Provider
+
+      </div>
+
+    </div>
+
+    {/* RIGHT CONTENT */}
+
+    <div className="director-content">
+
+      <span className="section-tag">
+
+        FROM THE DIRECTOR'S DESK
+
+      </span>
+
+      <h2>
+
+        Message
+        <br />
+        <span>from the Director</span>
+
+      </h2>
+
+      <p>
+
+        At F&H Aligners & Implant Dental Clinic, we believe exceptional
+        dentistry is about more than treating teeth—it is about
+        transforming confidence, enhancing quality of life, and delivering
+        an experience that reflects the highest standards of care.
+
+      </p>
+
+      <p>
+
+        Every patient who walks through our doors deserves honesty,
+        comfort, precision and personalised attention. By combining
+        advanced digital dentistry with evidence-based treatment and
+        modern technology, our goal is to provide care that is predictable,
+        minimally invasive and tailored to every individual.
+
+      </p>
+
+      <p>
+
+        Whether you are seeking Clear Aligners, Dental Implants,
+        Smile Designing, Oral & Maxillofacial Surgery or premium
+        Zirconia restorations, our commitment remains the same —
+        delivering excellence with compassion.
+
+      </p>
+
+      <div className="director-sign">
+
+        <h3>
+
+          Dr. Fida, M.D.S.
+
+        </h3>
+
+        <span>
+
+          Director & Invisalign Provider
+
+        </span>
+
+        <small>
+
+          F&H Aligners & Implant Dental Clinic
+
+        </small>
+
+      </div>
+
+      <div className="director-buttons">
+
+        <Link
+          to="/contact"
+          className="director-btn"
+        >
+
+          Book Appointment
+
+          <FaArrowRight/>
+
+        </Link>
+
+        <Link
+          to="/doctor"
+          className="director-outline"
+        >
+
+          Meet Our Doctors
+
+        </Link>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 {/* ==========================================
         DENTAL TREATMENTS
 ========================================== */}
 
-<section className="treatments-section">
+{/*<section className="treatments-section">
 
 <div className="container">
 
@@ -434,7 +557,7 @@ Learn More
 
 </div>
 
-</section>
+</section>*/}
 
     {/* ===========================================
       REAL SMILE TRANSFORMATIONS
