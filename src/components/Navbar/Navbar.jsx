@@ -19,9 +19,7 @@ function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const closeMenu = () => {
@@ -31,29 +29,16 @@ function Navbar() {
   return (
     <>
       <div
-        className={`nav-overlay ${
-          menuOpen ? "show-overlay" : ""
-        }`}
+        className={`nav-overlay ${menuOpen ? "show-overlay" : ""}`}
         onClick={closeMenu}
       ></div>
 
-      <header
-        className={`navbar ${
-          scroll ? "scrolled" : ""
-        }`}
-      >
+      <header className={`navbar ${scroll ? "scrolled" : ""}`}>
         <div className="container nav-container">
 
           {/* ================= Logo ================= */}
-          <Link
-            to="/"
-            className="logo"
-            onClick={closeMenu}
-          >
-            <img
-              src={logo}
-              alt="F&H Aligners & Implant"
-            />
+          <Link to="/" className="logo" onClick={closeMenu}>
+            <img src={logo} alt="F&H Aligners & Implant Logo" />
 
             <div className="logo-content">
               <h2>F&amp;H</h2>
@@ -63,11 +48,7 @@ function Navbar() {
           </Link>
 
           {/* ================= Menu ================= */}
-          <nav
-            className={`nav-menu ${
-              menuOpen ? "active" : ""
-            }`}
-          >
+          <nav className={`nav-menu ${menuOpen ? "active" : ""}`}>
             <NavLink to="/" end onClick={closeMenu}>
               Home
             </NavLink>
@@ -83,14 +64,17 @@ function Navbar() {
             <NavLink to="/contact" onClick={closeMenu}>
               Contact
             </NavLink>
+            
+            {/* Mobile-Only CTA injected inside the mobile drawer menu view */}
+            <Link to="/contact" className="book-btn mobile-drawer-btn" onClick={closeMenu}>
+              <FaCalendarCheck />
+              Book Appointment
+            </Link>
           </nav>
 
           {/* ================= Right ================= */}
           <div className="nav-right">
-            <Link
-              to="/contact"
-              className="book-btn"
-            >
+            <Link to="/contact" className="book-btn desktop-btn">
               <FaCalendarCheck />
               Book Appointment
             </Link>
@@ -98,6 +82,7 @@ function Navbar() {
             <button
               className="menu-icon"
               aria-label="Toggle navigation menu"
+              aria-expanded={menuOpen}
               onClick={() => setMenuOpen(!menuOpen)}
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
