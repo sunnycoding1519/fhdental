@@ -123,8 +123,8 @@
   padding: 12px 26px;
   border-radius: 60px;
   background: rgba(255, 255, 255, .08);
-  backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, .12);
   font-size: 12px;
   letter-spacing: 3px;
@@ -195,6 +195,7 @@
   background: rgba(255, 255, 255, .08);
   border: 1px solid rgba(255, 255, 255, .25);
   color: #fff;
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
 
@@ -749,6 +750,7 @@
   border-radius: 60px;
   border: 1px solid rgba(255, 255, 255, .25);
   background: rgba(255, 255, 255, .06);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   color: #fff;
   font-weight: 600;
@@ -762,8 +764,8 @@
 
 .contact-card {
   background: rgba(255, 255, 255, .06);
-  backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
   padding: 40px;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, .1);
