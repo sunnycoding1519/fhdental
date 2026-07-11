@@ -137,14 +137,13 @@ function Contact() {
                 </div>
 
                 <div className="input-group">
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
+  <input
+    type="email"
+    placeholder="Email Address (Optional)"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+  />
+</div>
 
                 <div className="input-group">
                   <input
