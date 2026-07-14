@@ -74,7 +74,7 @@ function Hero() {
           </Link>
 
           <a
-            href="tel:+917355095660"
+            href="tel:+919122266733"
             className="hero-btn secondary-btn"
           >
             <FaPhoneAlt />
