@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fhalignersanddentalclinic.com/sitemap.xml
