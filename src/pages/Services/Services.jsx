@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   FaArrowRight,
   FaTooth,
   FaTeeth,
   FaSmile,
-  FaMagic
+  FaMagic,
 } from "react-icons/fa";
 
 import "./Services.css";
@@ -17,808 +17,1089 @@ import hero from "../../assets/images/hero.png";
 import category1 from "../../assets/images/hero2.png";
 import category2 from "../../assets/images/hero.png";
 import category3 from "../../assets/images/hero.png";
-/* Doctor Images */
 
+/* Doctor Images */
 import doctor1 from "../../assets/images/doctor1.jpg";
 import doctor2 from "../../assets/images/doctor2.jpg";
 
+
 const Services = () => {
+
+  /* =========================================================
+     SERVICES PAGE SEO
+  ========================================================== */
+
+  useEffect(() => {
+    document.title =
+      "Dental Services in Jamshedpur | F&H Dental Clinic";
+
+    const description =
+      "Explore dental services at F&H Aligners & Implant Dental Clinic in Bistupur, Jamshedpur, including clear aligners, dental implants, smile makeovers, braces, root canal treatment and preventive dental care.";
+
+    let metaDescription = document.querySelector(
+      'meta[name="description"]'
+    );
+
+    if (!metaDescription) {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      document.head.appendChild(metaDescription);
+    }
+
+    metaDescription.setAttribute("content", description);
+
+    /* Canonical */
+
+    let canonical = document.querySelector(
+      'link[rel="canonical"]'
+    );
+
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+
+    canonical.setAttribute(
+      "href",
+      "https://fhalignersanddentalclinic.com/services"
+    );
+
+    /* Robots */
+
+    let robots = document.querySelector(
+      'meta[name="robots"]'
+    );
+
+    if (!robots) {
+      robots = document.createElement("meta");
+      robots.setAttribute("name", "robots");
+      document.head.appendChild(robots);
+    }
+
+    robots.setAttribute(
+      "content",
+      "index, follow"
+    );
+
+    /* =======================================================
+       SERVICE PAGE STRUCTURED DATA
+    ======================================================== */
+
+    const schemaId = "fh-services-schema";
+
+    let schema = document.getElementById(schemaId);
+
+    if (!schema) {
+      schema = document.createElement("script");
+      schema.id = schemaId;
+      schema.type = "application/ld+json";
+      document.head.appendChild(schema);
+    }
+
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Dental Services at F&H Aligners & Implant Dental Clinic",
+      "url": "https://fhalignersanddentalclinic.com/services",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Dental Implants"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Clear Aligners"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Dental Braces"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Smile Makeover"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Teeth Whitening"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Root Canal Treatment"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Dental Cleaning"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Wisdom Tooth Removal"
+        }
+      ]
+    });
+
+    return () => {
+      const existingSchema =
+        document.getElementById(schemaId);
+
+      if (existingSchema) {
+        existingSchema.remove();
+      }
+    };
+  }, []);
+
+
   return (
     <>
-      {/*==========================================
-            PREMIUM HERO
-===========================================*/}
 
-<section
-  className="services-hero"
-  style={{
-    backgroundImage: `url(${hero})`,
-  }}
->
-  <div className="services-overlay"></div>
+      {/* =========================================================
+          PREMIUM SERVICES HERO
+      ========================================================== */}
 
-  <div className="services-fade"></div>
+      <section
+        className="services-hero"
+        aria-labelledby="services-heading"
+        style={{
+          backgroundImage: `url(${hero})`,
+        }}
+      >
 
-  <div className="container">
+        <div className="services-overlay"></div>
 
-    <div className="services-content">
+        <div className="services-fade"></div>
 
-      <span className="services-tag">
-        F&H ALIGNERS & IMPLANT DENTAL CLINIC
-      </span>
+        <div className="container">
 
-      <h1>
-        Dental Treatments
-        <br />
-        Designed Around
-        <span> Your Smile.</span>
-      </h1>
+          <div className="services-content">
 
-      <p>
-        Experience world-class dental care delivered through advanced
-        technology, evidence-based treatment planning and a patient-first
-        philosophy. From smile makeovers to dental implants, every treatment
-        is designed to restore confidence, comfort and long-term oral health.
-      </p>
+            <span className="services-tag">
+              F&H ALIGNERS & IMPLANT DENTAL CLINIC
+            </span>
 
-      <div className="services-buttons">
+            {/* PRIMARY SEO H1 */}
 
-        <Link
-          to="/contact"
-          className="services-btn primary-service-btn"
-        >
-          Book Appointment
-          <FaArrowRight />
-        </Link>
+            <h1 id="services-heading">
 
-        <Link
-          to="/doctors"
-          className="services-btn secondary-service-btn"
-        >
-          Meet Our Doctors
-        </Link>
+              Dental Services in
+              <br />
 
-      </div>
+              <span>
+                Jamshedpur
+              </span>
 
-      <div className="services-stats">
+            </h1>
 
-        <div>
+            <p>
+              Explore personalized dental care at F&H Aligners &
+              Implant Dental Clinic in Bistupur, Jamshedpur.
+              Our treatments include clear aligners, dental
+              implants, braces, smile makeovers, cosmetic
+              dentistry, restorative care and preventive dental
+              treatments.
+            </p>
 
-          <h3>5000+</h3>
+            <div className="services-buttons">
 
-          <span>Happy Smiles</span>
+              <Link
+                to="/contact"
+                className="services-btn primary-service-btn"
+                aria-label="Book a dental appointment in Jamshedpur"
+              >
+                Book Appointment
+
+                <FaArrowRight />
+
+              </Link>
+
+              <Link
+                to="/doctor"
+                className="services-btn secondary-service-btn"
+              >
+                Meet Our Doctors
+              </Link>
+
+            </div>
+
+            <div className="services-stats">
+
+              <div>
+
+                <h3>5000+</h3>
+
+                <span>
+                  Happy Smiles
+                </span>
+
+              </div>
+
+              <div>
+
+                <h3>10+</h3>
+
+                <span>
+                  Years Experience
+                </span>
+
+              </div>
+
+              <div>
+
+                <h3>4.9★</h3>
+
+                <span>
+                  Google Rating
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
 
         </div>
 
-        <div>
+      </section>
 
-          <h3>10+</h3>
 
-          <span>Years Experience</span>
-
-        </div>
-
-        <div>
-
-          <h3>4.9★</h3>
-
-          <span>Google Rating</span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-      {/*=========================================
+      {/* =========================================================
           SERVICE CATEGORIES
-==========================================*/}
+      ========================================================== */}
 
-<section className="service-categories">
+      <section
+        className="service-categories"
+        aria-labelledby="categories-heading"
+      >
 
-<div className="container">
+        <div className="container">
 
-<div className="section-title">
+          <div className="section-title">
 
-<span className="section-tag">
-OUR SERVICES
-</span>
+            <span className="section-tag">
+              OUR DENTAL SERVICES
+            </span>
 
-<h2>
-Service Categories
-</h2>
+            <h2 id="categories-heading">
+              Comprehensive Dental Care
+              <span> in Jamshedpur</span>
+            </h2>
 
-<p>
+            <p>
+              From replacing missing teeth and correcting
+              alignment to improving smile aesthetics and
+              maintaining oral health, our dental treatments
+              are planned around your individual needs.
+            </p>
 
-From corrective procedures to aesthetic transformations,
-explore treatments designed for long-term oral health,
-comfortable dentistry and naturally beautiful smiles.
+          </div>
 
-Whether it is routine checkups, cosmetic dentistry,
-aligners or implants, every treatment is carefully planned
-to deliver predictable and lasting results.
 
-</p>
+          <div className="category-grid">
 
-</div>
+            {/* RESTORE */}
 
-<div className="category-grid">
+            <article className="category-card">
 
-{/* CARD 1 */}
+              <div className="category-image">
 
-<div className="category-card">
+                <img
+                  src={category1}
+                  alt="Dental implant and restorative dental treatment in Jamshedpur"
+                  loading="lazy"
+                />
 
-<div className="category-image">
+              </div>
 
-<img
-src={category1}
-alt="Restore & Replace"
-/>
+              <div className="category-content">
 
-</div>
+                <span>
+                  Restore & Replace
+                </span>
 
-<div className="category-content">
+                <h3>
+                  Dental Implants, Full Mouth Rehabilitation,
+                  Crowns & Bridges
+                </h3>
 
-<span>
+                <p>
+                  Restore missing or damaged teeth with
+                  modern restorative dentistry designed for
+                  function, comfort and natural-looking results.
+                </p>
 
-Restore & Replace
+                <a
+                  href="#restore"
+                  aria-label="Explore dental implant and restorative treatments"
+                >
+                  Explore Treatment
+                  <FaArrowRight />
+                </a>
 
-</span>
+              </div>
 
-<h3>
+            </article>
 
-Dental Implants
 
-Full Mouth Rehab
+            {/* ALIGN */}
 
-Crowns & Bridges
+            <article className="category-card">
 
-</h3>
+              <div className="category-image">
 
-<p>
+                <img
+                  src={category2}
+                  alt="Clear aligners and dental braces treatment in Jamshedpur"
+                  loading="lazy"
+                />
 
-Restore missing or damaged teeth using
-advanced implant dentistry, crowns and
-bridges designed for strength, comfort
-and natural aesthetics.
+              </div>
 
-</p>
+              <div className="category-content">
 
-<Link to="#restore">
+                <span>
+                  Straighten & Align
+                </span>
 
-Explore Treatment
+                <h3>
+                  Clear Aligners & Dental Braces
+                </h3>
 
-<FaArrowRight/>
+                <p>
+                  Improve tooth alignment, spacing and bite
+                  through modern orthodontic treatment and
+                  digital treatment planning.
+                </p>
 
-</Link>
+                <a
+                  href="#align"
+                  aria-label="Explore clear aligners and braces treatments"
+                >
+                  Explore Treatment
+                  <FaArrowRight />
+                </a>
 
-</div>
+              </div>
 
-</div>
+            </article>
 
-{/* CARD 2 */}
 
-<div className="category-card">
+            {/* SMILE */}
 
-<div className="category-image">
+            <article className="category-card">
 
-<img
-src={category2}
-alt=""
-/>
+              <div className="category-image">
 
-</div>
+                <img
+                  src={category3}
+                  alt="Smile makeover and cosmetic dentistry in Jamshedpur"
+                  loading="lazy"
+                />
 
-<div className="category-content">
+              </div>
 
-<span>
+              <div className="category-content">
 
-Straighten & Align
+                <span>
+                  Enhance Your Smile
+                </span>
 
-</span>
+                <h3>
+                  Smile Makeovers, Teeth Whitening & Veneers
+                </h3>
 
-<h3>
+                <p>
+                  Enhance the appearance of your smile with
+                  personalized cosmetic dental treatments
+                  focused on colour, shape and symmetry.
+                </p>
 
-Invisible Aligners
+                <a
+                  href="#smile"
+                  aria-label="Explore cosmetic dental treatments"
+                >
+                  Explore Treatment
+                  <FaArrowRight />
+                </a>
 
-Dental Braces
+              </div>
 
-</h3>
+            </article>
 
-<p>
+          </div>
 
-Correct crowding, spacing and bite
-issues through digital planning,
-clear aligners and modern orthodontics.
-
-</p>
-
-<Link to="#align">
-
-Explore Treatment
-
-<FaArrowRight/>
-
-</Link>
-
-</div>
-
-</div>
-
-{/* CARD 3 */}
-
-<div className="category-card">
-
-<div className="category-image">
-
-<img
-src={category3}
-alt=""
-/>
-
-</div>
-
-<div className="category-content">
-
-<span>
-
-Enhance Your Smile
-
-</span>
-
-<h3>
-
-Smile Makeovers
-
-Teeth Whitening
-
-Veneers
-
-</h3>
-
-<p>
-
-Improve colour, symmetry and overall
-appearance with cosmetic dentistry
-tailored to your smile goals.
-
-</p>
-
-<Link to="#smile">
-
-Explore Treatment
-
-<FaArrowRight/>
-
-</Link>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-      {/*=========================================
-      RESTORE & REPLACE
-==========================================*/}
-
-<section className="service-detail-section" id="restore">
-
-<div className="container detail-grid">
-
-<div className="detail-left">
-
-<span className="section-tag">
-RESTORE & REPLACE
-</span>
-
-<h2>
-Restore &
-<br />
-Replace
-</h2>
-
-<p>
-Replace missing or damaged teeth using modern restorative
-dentistry. Our treatments are designed to restore chewing
-ability, facial aesthetics and long-term oral health while
-maintaining a completely natural appearance.
-</p>
-
-</div>
-
-<div className="detail-right">
-
-<div className="detail-card">
-
-<FaTooth/>
-
-<h3>Dental Implants</h3>
-
-<p>
-Permanent replacement for missing teeth using titanium implants.
-</p>
-
-</div>
-
-<div className="detail-card">
-
-<FaTooth/>
-
-<h3>Full Mouth Rehab</h3>
-
-<p>
-Complete rehabilitation for severely worn or damaged teeth.
-</p>
-
-</div>
-
-<div className="detail-card">
-
-<FaTooth/>
-
-<h3>Crowns & Bridges</h3>
-
-<p>
-Strong ceramic restorations designed to match natural teeth.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-{/*=========================================
-      STRAIGHTEN & ALIGN
-==========================================*/}
-
-<section className="service-detail-section gray-bg" id="align">
-
-<div className="container detail-grid reverse-grid">
-
-<div className="detail-right">
-
-<div className="detail-card">
-
-<FaTeeth/>
-
-<h3>Invisible Aligners</h3>
-
-<p>
-Virtually invisible clear aligners for modern smile correction.
-</p>
-
-</div>
-
-<div className="detail-card">
-
-<FaTeeth/>
-
-<h3>Metal Braces</h3>
-
-<p>
-Reliable orthodontic treatment for every age group.
-</p>
-
-</div>
-
-</div>
-
-<div className="detail-left">
-
-<span className="section-tag">
-STRAIGHTEN & ALIGN
-</span>
-
-<h2>
-Straighten
-<br />
-& Align
-</h2>
-
-<p>
-Correct crowding, spacing and bite problems through
-digital treatment planning. Every orthodontic case is
-planned for maximum comfort, precision and predictable
-results.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-{/*=========================================
-      ENHANCE YOUR SMILE
-==========================================*/}
-
-<section className="service-detail-section" id="smile">
-
-<div className="container detail-grid">
-
-<div className="detail-left">
-
-<span className="section-tag">
-ENHANCE YOUR SMILE
-</span>
-
-<h2>
-Enhance
-<br />
-Your Smile
-</h2>
-
-<p>
-Cosmetic dentistry designed to improve colour,
-shape, symmetry and confidence. Whether you need
-small refinements or a complete smile makeover,
-our specialists personalise every treatment.
-</p>
-
-</div>
-
-<div className="detail-right three-card">
-
-<div className="detail-card">
-
-<FaMagic/>
-
-<h3>Smile Makeover</h3>
-
-<p>
-Complete aesthetic smile transformation.
-</p>
-
-</div>
-
-<div className="detail-card">
-
-<FaSmile/>
-
-<h3>Teeth Whitening</h3>
-
-<p>
-Professional whitening for brighter smiles.
-</p>
-
-</div>
-
-<div className="detail-card">
-
-<FaMagic/>
-
-<h3>Dental Veneers</h3>
-
-<p>
-Ultra-thin porcelain veneers for natural beauty.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-{/*==========================================
-            PREMIUM MARQUEE
-===========================================*/}
-
-<section className="service-marquee">
-
-<div className="marquee">
-
-<div className="marquee-track">
-
-<span>Experienced Clinical Team</span>
-
-<span>Modern Technology & Materials</span>
-
-<span>Focus On Long-Term Results</span>
-
-<span>Digital Dentistry</span>
-
-<span>Smile Design Experts</span>
-
-<span>Patient First Treatment</span>
-
-<span>Experienced Clinical Team</span>
-
-<span>Modern Technology & Materials</span>
-
-<span>Focus On Long-Term Results</span>
-
-<span>Digital Dentistry</span>
-
-<span>Smile Design Experts</span>
-
-<span>Patient First Treatment</span>
-
-</div>
-
-</div>
-
-</section>
-
-
-{/*==========================================
-        DOCTORS SECTION
-===========================================*/}
-<section className="doctor-section">
-  <div className="container">
-    <div className="doctor-heading">
-      <span className="section-tag">OUR SPECIALISTS</span>
-      <h2>Meet Your Dental Specialists</h2>
-      <p>
-        Meet experienced specialists dedicated to creating healthy,
-        beautiful smiles through advanced dentistry, personalised
-        care and the latest treatment technology.
-      </p>
-    </div>
-
-    {/*---------------- Doctor 1 ----------------*/}
-    <div className="doctor-row">
-      <div className="doctor-image-wrapper">
-        <div className="doctor-image-bg-glow"></div>
-        <div className="doctor-image">
-          <img src={doctor1} alt="Dr. Hazra" />
-          <div className="doctor-image-overlay"></div>
         </div>
-      </div>
 
-      <div className="doctor-content">
-        <span className="specialty-badge">Orthodontist</span>
-        <h3>Dr. Hazra</h3>
-        <h4>BDS, MDS</h4>
-        <p>
-          Gold Medalist Orthodontist specializing in Invisible Aligners, Braces, 
-          Smile Makeovers, Jaw Correction and Pediatric Orthodontics.
-          <br /><br />
-          Known for minimally invasive treatment planning and beautiful smile transformations.
-        </p>
+      </section>
 
-        <ul className="premium-bullets">
-          <li><span>Invisible Aligners</span></li>
-          <li><span>Smile Makeovers</span></li>
-          <li><span>Jaw Correction</span></li>
-          <li><span>Pediatric Orthodontics</span></li>
-        </ul>
 
-        <Link to="/doctor" className="doctor-btn">
-          <span>View Profile</span>
-          <FaArrowRight />
-        </Link>
-      </div>
-    </div>
+      {/* =========================================================
+          RESTORE & REPLACE
+      ========================================================== */}
 
-    {/*---------------- Doctor 2 ----------------*/}
-    <div className="doctor-row reverse">
-      <div className="doctor-image-wrapper">
-        <div className="doctor-image-bg-glow"></div>
-        <div className="doctor-image">
-          <img src={doctor2} alt="Dr. Sanchit Mahajanzy" />
-          <div className="doctor-image-overlay"></div>
+      <section
+        className="service-detail-section"
+        id="restore"
+        aria-labelledby="restore-heading"
+      >
+
+        <div className="container detail-grid">
+
+          <div className="detail-left">
+
+            <span className="section-tag">
+              RESTORE & REPLACE
+            </span>
+
+            <h2 id="restore-heading">
+              Dental Implants &
+              <br />
+              Restorative Dentistry
+            </h2>
+
+            <p>
+              Replace missing or damaged teeth using modern
+              restorative dental treatments in Jamshedpur.
+              Our approach focuses on restoring chewing
+              function, comfort, aesthetics and long-term
+              oral health.
+            </p>
+
+          </div>
+
+
+          <div className="detail-right">
+
+            <article className="detail-card">
+
+              <FaTooth />
+
+              <h3>
+                Dental Implants
+              </h3>
+
+              <p>
+                Modern tooth replacement treatment for
+                suitable patients with missing teeth.
+              </p>
+
+              <Link to="/services#restore">
+                Learn More
+              </Link>
+
+            </article>
+
+
+            <article className="detail-card">
+
+              <FaTooth />
+
+              <h3>
+                Full Mouth Rehabilitation
+              </h3>
+
+              <p>
+                Comprehensive restorative treatment for
+                severely worn, damaged or compromised teeth.
+              </p>
+
+            </article>
+
+
+            <article className="detail-card">
+
+              <FaTooth />
+
+              <h3>
+                Crowns & Bridges
+              </h3>
+
+              <p>
+                Dental restorations designed to improve
+                tooth strength, function and appearance.
+              </p>
+
+            </article>
+
+          </div>
+
         </div>
-      </div>
 
-      <div className="doctor-content">
-        <span className="specialty-badge">Implantologist</span>
-        <h3>Dr. Sanchit Mahajanzy</h3>
-        <h4>BDS, MDS (OMFS)</h4>
-        <p>
-          Specialist in Dental Implants, Wisdom Tooth Surgery, Laser Surgery 
-          and Oral Cancer Screening.
-          <br /><br />
-          Focused on long-term function, precision and painless dentistry.
-        </p>
+      </section>
 
-        <ul className="premium-bullets">
-          <li><span>Dental Implants</span></li>
-          <li><span>Laser Dentistry</span></li>
-          <li><span>Wisdom Tooth Surgery</span></li>
-          <li><span>Oral Cancer Screening</span></li>
-        </ul>
 
-        <Link to="/doctor" className="doctor-btn">
-          <span>View Profile</span>
-          <FaArrowRight />
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
-{/*==========================================
-      ADDITIONAL TREATMENTS
-===========================================*/}
+      {/* =========================================================
+          STRAIGHTEN & ALIGN
+      ========================================================== */}
 
-<section className="additional-section">
+      <section
+        className="service-detail-section gray-bg"
+        id="align"
+        aria-labelledby="align-heading"
+      >
 
-<div className="container">
+        <div className="container detail-grid reverse-grid">
 
-<div className="additional-heading">
+          <div className="detail-right">
 
-<span className="section-tag">
+            <article className="detail-card">
 
-MORE TREATMENTS
+              <FaTeeth />
 
-</span>
+              <h3>
+                Clear Aligners
+              </h3>
 
-<h2>
+              <p>
+                Discreet orthodontic treatment designed to
+                gradually improve tooth alignment.
+              </p>
 
-Additional Treatments
-<br/>
+            </article>
 
-Offered at F&H Dental
 
-</h2>
+            <article className="detail-card">
 
-<p>
+              <FaTeeth />
 
-Beyond our core services, we provide comprehensive dental
-care ranging from preventive checkups to advanced oral
-surgeries — all under one roof.
+              <h3>
+                Dental Braces
+              </h3>
 
-</p>
+              <p>
+                Orthodontic treatment for correcting
+                crowding, spacing and bite-related concerns.
+              </p>
 
-</div>
+            </article>
 
+          </div>
 
-<div className="additional-grid">
 
-<div className="additional-card"><FaTooth/><h4>General Checkup</h4></div>
+          <div className="detail-left">
 
-<div className="additional-card"><FaTooth/><h4>Root Canal Treatment</h4></div>
+            <span className="section-tag">
+              STRAIGHTEN & ALIGN
+            </span>
 
-<div className="additional-card"><FaTooth/><h4>Dental Fillings</h4></div>
+            <h2 id="align-heading">
+              Clear Aligners &
+              <br />
+              Dental Braces
+            </h2>
 
-<div className="additional-card"><FaTooth/><h4>Wisdom Tooth Removal</h4></div>
+            <p>
+              Correct crowding, spacing and bite concerns
+              through personalized orthodontic treatment.
+              Clear aligners and braces are planned according
+              to each patient's individual dental needs.
+            </p>
 
-<div className="additional-card"><FaTooth/><h4>Dental Cleaning</h4></div>
+          </div>
 
-<div className="additional-card"><FaTooth/><h4>Fluoride Treatment</h4></div>
+        </div>
 
-<div className="additional-card"><FaTooth/><h4>Gum Disease Treatment</h4></div>
+      </section>
 
-<div className="additional-card"><FaTooth/><h4>Laser Dentistry</h4></div>
 
-<div className="additional-card"><FaTooth/><h4>Dentures</h4></div>
+      {/* =========================================================
+          SMILE MAKEOVER
+      ========================================================== */}
 
-<div className="additional-card"><FaTooth/><h4>Post & Core</h4></div>
+      <section
+        className="service-detail-section"
+        id="smile"
+        aria-labelledby="smile-heading"
+      >
 
-<div className="additional-card"><FaTooth/><h4>Frenectomy</h4></div>
+        <div className="container detail-grid">
 
-<div className="additional-card"><FaTooth/><h4>Minor Oral Surgery</h4></div>
+          <div className="detail-left">
 
-</div>
+            <span className="section-tag">
+              COSMETIC DENTISTRY
+            </span>
 
-</div>
+            <h2 id="smile-heading">
+              Smile Makeover &
+              <br />
+              Cosmetic Dentistry
+            </h2>
 
-</section>
-{/*==========================================
-            PREMIUM CTA
-===========================================*/}
+            <p>
+              Cosmetic dental treatments designed to improve
+              the colour, shape, symmetry and overall appearance
+              of your smile. Every treatment plan is personalized
+              around your smile goals.
+            </p>
 
-<section className="services-cta">
+          </div>
 
-<div className="container">
 
-<div className="cta-wrapper">
+          <div className="detail-right three-card">
 
-<div className="cta-left">
+            <article className="detail-card">
 
-<span className="section-tag">
+              <FaMagic />
 
-BOOK YOUR VISIT
+              <h3>
+                Smile Makeover
+              </h3>
 
-</span>
+              <p>
+                Personalized cosmetic treatment for a
+                balanced and natural-looking smile.
+              </p>
 
-<h2>
+            </article>
 
-Ready to Transform
-<br/>
 
-Your Smile?
+            <article className="detail-card">
 
-</h2>
+              <FaSmile />
 
-<p>
+              <h3>
+                Teeth Whitening
+              </h3>
 
-Whether you need a routine dental check-up,
-clear aligners, dental implants or a complete
-smile makeover, our experienced specialists are
-here to provide personalised treatment with
-advanced technology and compassionate care.
+              <p>
+                Professional whitening treatment for
+                improving the appearance of discoloured teeth.
+              </p>
 
-</p>
+            </article>
 
-<div className="cta-buttons">
 
-<Link
-to="/contact"
-className="cta-primary-btn"
->
+            <article className="detail-card">
 
-Book Appointment
+              <FaMagic />
 
-<FaArrowRight/>
+              <h3>
+                Dental Veneers
+              </h3>
 
-</Link>
+              <p>
+                Thin dental restorations used to improve
+                the appearance of selected teeth.
+              </p>
 
-<a
-href="tel:+917355095660"
-className="cta-secondary-btn"
->
+            </article>
 
-Call Now
+          </div>
 
-</a>
+        </div>
 
-</div>
+      </section>
 
-</div>
 
+      {/* =========================================================
+          PREMIUM MARQUEE
+      ========================================================== */}
 
-<div className="cta-right">
+      <section
+        className="service-marquee"
+        aria-label="F&H Dental Clinic benefits"
+      >
 
-<div className="contact-card">
+        <div className="marquee">
 
-<h3>
+          <div className="marquee-track">
 
-Visit Our Clinic
+            <span>Experienced Clinical Team</span>
 
-</h3>
+            <span>Modern Technology & Materials</span>
 
-<p>
+            <span>Focus On Long-Term Results</span>
 
-F&H Aligners & Implant Dental Clinic
+            <span>Digital Dentistry</span>
 
-</p>
+            <span>Smile Design Experts</span>
 
-<span>
+            <span>Patient First Treatment</span>
 
-📍 Jamshedpur, Jharkhand
+            <span>Experienced Clinical Team</span>
 
-</span>
+            <span>Modern Technology & Materials</span>
 
-<span>
+            <span>Focus On Long-Term Results</span>
 
-📞 +91 9122266733
+            <span>Digital Dentistry</span>
 
-</span>
+            <span>Smile Design Experts</span>
 
-<span>
+            <span>Patient First Treatment</span>
 
-🕘 Mon - Sat : 10 AM – 8 PM
+          </div>
 
-</span>
+        </div>
 
-</div>
+      </section>
 
-</div>
 
-</div>
+      {/* =========================================================
+          DOCTORS
+      ========================================================== */}
 
-</div>
+      <section
+        className="doctor-section"
+        aria-labelledby="specialists-heading"
+      >
 
-</section>
+        <div className="container">
 
-      
+          <div className="doctor-heading">
 
-      
+            <span className="section-tag">
+              OUR SPECIALISTS
+            </span>
+
+            <h2 id="specialists-heading">
+              Meet Your Dental Specialists
+            </h2>
+
+            <p>
+              Meet experienced specialists providing
+              personalized orthodontic, implant and oral
+              surgical care at F&H Dental Clinic in Jamshedpur.
+            </p>
+
+          </div>
+
+
+          {/* DOCTOR 1 */}
+
+          <div className="doctor-row">
+
+            <div className="doctor-image-wrapper">
+
+              <div className="doctor-image-bg-glow"></div>
+
+              <div className="doctor-image">
+
+                <img
+                  src={doctor1}
+                  alt="Dr. Hazra, Orthodontist at F&H Dental Clinic in Jamshedpur"
+                  loading="lazy"
+                />
+
+                <div className="doctor-image-overlay"></div>
+
+              </div>
+
+            </div>
+
+
+            <div className="doctor-content">
+
+              <span className="specialty-badge">
+                Orthodontist
+              </span>
+
+              <h3>
+                Dr. Hazra
+              </h3>
+
+              <h4>
+               Periodontal & Implant Dentistry
+              </h4>
+
+              <p>
+                 Dr. Adreet Hazra is a specialist in periodontal and implant
+                dentistry with over <strong>10 years of experience</strong> in
+                dental implant surgical placement and restoration.
+              </p>
+              <p>
+                 He provides comprehensive solutions for patients with missing
+                teeth, from single-tooth replacements to full-arch implant
+                restorations using advanced implant technology.
+              </p>
+
+    
+
+              <Link
+                to="/doctor"
+                className="doctor-btn"
+              >
+                <span>
+                  View Profile
+                </span>
+
+                <FaArrowRight />
+
+              </Link>
+
+            </div>
+
+          </div>
+
+
+          {/* DOCTOR 2 */}
+
+          <div className="doctor-row reverse">
+
+            <div className="doctor-image-wrapper">
+
+              <div className="doctor-image-bg-glow"></div>
+
+              <div className="doctor-image">
+
+                <img
+                  src={doctor2}
+                  alt="Dr. Sanchit Mahajanzy, Implantologist at F&H Dental Clinic in Jamshedpur"
+                  loading="lazy"
+                />
+
+                <div className="doctor-image-overlay"></div>
+
+              </div>
+
+            </div>
+
+
+            <div className="doctor-content">
+
+              <span className="specialty-badge">
+                Implantologist
+              </span>
+
+              <h3>
+                Dr. Sakeena Fida
+              </h3>
+
+              <h4>
+               General & Cosmetic Dentistry
+              </h4>
+
+              <p>
+                Dr. Fida is renowned for delivering exceptional care in both
+                general and cosmetic dentistry, combining oral health, function,
+                and aesthetics.
+              </p>
+              <p>She specializes in teeth whitening, porcelain veneers, smile
+                makeovers, restorative dentistry, preventive care, and
+                personalized luxury dental experiences using modern technology
+                </p>
+
+            
+              <Link
+                to="/doctor"
+                className="doctor-btn"
+              >
+
+                <span>
+                  View Profile
+                </span>
+
+                <FaArrowRight />
+
+              </Link>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =========================================================
+          ADDITIONAL TREATMENTS
+      ========================================================== */}
+
+      <section
+        className="additional-section"
+        aria-labelledby="additional-heading"
+      >
+
+        <div className="container">
+
+          <div className="additional-heading">
+
+            <span className="section-tag">
+              MORE DENTAL TREATMENTS
+            </span>
+
+            <h2 id="additional-heading">
+              Additional Dental Treatments
+              <br />
+              Offered at F&H Dental
+            </h2>
+
+            <p>
+              Along with orthodontic, implant and cosmetic
+              treatments, we provide comprehensive dental care
+              ranging from preventive checkups to restorative
+              procedures and selected oral surgeries.
+            </p>
+
+          </div>
+
+
+          <div className="additional-grid">
+
+            <article className="additional-card">
+              <FaTooth />
+              <h4>General Dental Checkup</h4>
+            </article>
+
+            <article className="additional-card">
+              <FaTooth />
+              <h4>Root Canal Treatment</h4>
+            </article>
+
+            <article className="additional-card">
+              <FaTooth />
+              <h4>Dental Fillings</h4>
+            </article>
+
+            <article className="additional-card">
+              <FaTooth />
+              <h4>Wisdom Tooth Removal</h4>
+            </article>
+
+            <article className="additional-card">
+              <FaTooth />
+              <h4>Dental Cleaning</h4>
+            </article>
+
+            <article className="additional-card">
+              <FaTooth />
+              <h4>Fluoride Treatment</h4>
+            </article>
+
+            <article className="additional-card">
+              <FaTooth />
+              <h4>Gum Disease Treatment</h4>
+            </article>
+
+            <article className="additional-card">
+              <FaTooth />
+              <h4>Laser Dentistry</h4>
+            </article>
+
+            <article className="additional-card">
+              <FaTooth />
+              <h4>Dentures</h4>
+            </article>
+
+            <article className="additional-card">
+              <FaTooth />
+              <h4>Post & Core</h4>
+            </article>
+
+            <article className="additional-card">
+              <FaTooth />
+              <h4>Frenectomy</h4>
+            </article>
+
+            <article className="additional-card">
+              <FaTooth />
+              <h4>Minor Oral Surgery</h4>
+            </article>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =========================================================
+          PREMIUM CTA
+      ========================================================== */}
+
+      <section
+        className="services-cta"
+        aria-labelledby="cta-heading"
+      >
+
+        <div className="container">
+
+          <div className="cta-wrapper">
+
+            <div className="cta-left">
+
+              <span className="section-tag">
+                BOOK YOUR VISIT
+              </span>
+
+              <h2 id="cta-heading">
+                Ready to Transform
+                <br />
+                Your Smile?
+              </h2>
+
+              <p>
+                Whether you need a routine dental check-up,
+                clear aligners, dental implants or a complete
+                smile makeover, our specialists are here to
+                provide personalized dental care in Jamshedpur.
+              </p>
+
+              <div className="cta-buttons">
+
+                <Link
+                  to="/contact"
+                  className="cta-primary-btn"
+                >
+                  Book Appointment
+                  <FaArrowRight />
+                </Link>
+
+                <a
+                  href="tel:+919122266733"
+                  className="cta-secondary-btn"
+                >
+                  Call Now
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <div className="cta-right">
+
+              <div className="contact-card">
+
+                <h3>
+                  Visit Our Clinic
+                </h3>
+
+                <p>
+                  F&H Aligners & Implant Dental Clinic
+                </p>
+
+                <span>
+                  📍 Chowdhary Rd, Ram Das Bhatta,
+                  Bistupur, Jamshedpur, Jharkhand 831001
+                </span>
+
+                <span>
+                  📞 +91 91222 66733
+                </span>
+
+                <span>
+                  🕘 Mon - Sat : 10 AM – 8 PM
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
     </>
   );
 };
