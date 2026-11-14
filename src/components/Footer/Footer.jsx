@@ -1,102 +1,67 @@
+
 import "./Footer.css";
 import { Link } from "react-router-dom";
 
 import {
-FaInstagram,
-FaYoutube
+  FaInstagram,
+  FaYoutube
 } from "react-icons/fa";
 
 import logo from "../../assets/images/logo.png";
 
-function Footer(){
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container">
 
-return(
+        <div className="footer-top">
+          <div className="footer-logo">
+            <img
+              src={logo}
+              alt="F&H Dental"
+            />
+          </div>
 
-<footer className="footer">
+          <div className="footer-social">
+            <span>Follow us at</span>
 
-<div className="container">
+            <a
+              href="https://www.instagram.com/fhalignersandimplant/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
 
-<div className="footer-top">
+            <a
+              href="#"
+              aria-label="YouTube"
+            >
+              <FaYoutube />
+            </a>
+          </div>
+        </div>
 
-<div className="footer-logo">
+        <div className="footer-line"></div>
 
-<img
-src={logo}
-alt="F&H Dental"
-/>
+        <div className="footer-bottom">
+          <p>
+            © 2026 F&H Aligners & Implant Dental Clinic
+          </p>
 
-</div>
+          <div className="footer-links">
+            <Link to="/about">About</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/doctor">Doctors</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/faq">FAQ</Link>
+          </div>
+        </div>
 
-<div className="footer-social">
-
-<span>Follow us at</span>
-
-<a href="#">
-<FaInstagram/>
-</a>
-
-<a href="#">
-<FaYoutube/>
-</a>
-
-</div>
-
-</div>
-
-<div className="footer-line"></div>
-
-<div className="footer-bottom">
-
-<p>
-
-© 2026 F&H Aligners & Implant Dental Clinic
-
-</p>
-
-<div className="footer-links">
-
-<Link to="/whyus">
-
-About
-
-</Link>
-
-<Link to="/services">
-
-Services
-
-</Link>
-
-<Link to="/doctor">
-
-Doctors
-
-</Link>
-
-<Link to="/contact">
-
-Contact
-
-</Link>
-
-<Link to="/faq">
-
-FAQ
-
-</Link>
-
-
-</div>
-
-</div>
-
-</div>
-
-</footer>
-
-
-);
-
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;

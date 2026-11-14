@@ -1,8 +1,59 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Main Website Pages -->
   <url>
     <loc>https://fhalignersanddentalclinic.com/</loc>
+  </url>
+
+  <url>
+    <loc>https://fhalignersanddentalclinic.com/about</loc>
+  </url>
+
+  <url>
+    <loc>https://fhalignersanddentalclinic.com/services</loc>
+  </url>
+
+  <url>
+    <loc>https://fhalignersanddentalclinic.com/doctor</loc>
+  </url>
+
+  <url>
+    <loc>https://fhalignersanddentalclinic.com/faq</loc>
+  </url>
+
+  <url>
+    <loc>https://fhalignersanddentalclinic.com/contact</loc>
+  </url>
+
+  <!-- Treatment SEO Pages -->
+  <url>
+    <loc>https://fhalignersanddentalclinic.com/treatments/dental-implants-jamshedpur</loc>
+  </url>
+
+  <url>
+    <loc>https://fhalignersanddentalclinic.com/treatments/clear-aligners-jamshedpur</loc>
+  </url>
+
+  <url>
+    <loc>https://fhalignersanddentalclinic.com/treatments/dental-braces-jamshedpur</loc>
+  </url>
+
+  <url>
+    <loc>https://fhalignersanddentalclinic.com/treatments/cosmetic-dentistry-jamshedpur</loc>
+  </url>
+
+  <url>
+    <loc>https://fhalignersanddentalclinic.com/treatments/smile-makeover-jamshedpur</loc>
+  </url>
+
+  <url>
+    <loc>https://fhalignersanddentalclinic.com/treatments/teeth-whitening-jamshedpur</loc>
+  </url>
+
+  <url>
+    <loc>https://fhalignersanddentalclinic.com/treatments/root-canal-treatment-jamshedpur</loc>
   </url>
 
 </urlset>
