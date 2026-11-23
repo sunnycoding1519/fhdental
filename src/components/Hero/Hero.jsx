@@ -15,9 +15,11 @@ import { motion } from "framer-motion";
 
 import "./Hero.css";
 
-import heroImage from "../../assets/images/hero2.png";
+import heroImage from "../../assets/images/gallery/fh-clinic-reception.png";
 import doctor2 from "../../assets/images/doctor2.jpg";
 import directorImage from "../../assets/images/doctor2.jpg";
+
+import ClinicGallery from "../ClinicGallery/ClinicGallery";
 
 function Hero() {
   return (
@@ -30,7 +32,7 @@ function Hero() {
         className="hero"
         aria-labelledby="hero-heading"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.45)), url(${heroImage})`,
+          backgroundImage: `url(${heroImage})`,
         }}
       >
         <div className="hero-overlay"></div>
@@ -45,17 +47,15 @@ function Hero() {
             F&H ALIGNERS & IMPLANT DENTAL CLINIC
           </motion.span>
 
-          {/* PRIMARY SEO H1 */}
-
           <motion.h1
             id="hero-heading"
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Premium Dental Care
+            Advanced Dental Care
             <br />
-            in <span>Bistupur, Jamshedpur.</span>
+            for <span>Confident Smiles.</span>
           </motion.h1>
 
           <motion.p
@@ -63,9 +63,11 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Experience personalized dental care in Jamshedpur with
-            advanced clear aligners, dental implants, smile makeovers,
-            cosmetic dentistry and modern restorative treatments.
+            Experience personalized dental care at F&H Aligners
+            & Implant Dental Clinic in Bistupur, Jamshedpur, with
+            clear aligners, dental implants, permanent tooth
+            replacement, teeth whitening, veneers and modern
+            cosmetic and restorative treatments.
           </motion.p>
 
           <motion.div
@@ -114,8 +116,6 @@ function Hero() {
         aria-labelledby="why-heading"
       >
         <div className="container why-container">
-          {/* LEFT */}
-
           <div className="why-left">
             <span className="section-tag">
               WHY CHOOSE F&H
@@ -128,75 +128,74 @@ function Hero() {
             </h2>
 
             <p>
-              At F&H Aligners & Implant Dental Clinic, we combine
-              advanced technology, specialist expertise and
-              personalized care to create a comfortable dental
-              experience for every patient in Jamshedpur.
+              What makes F&H different is our focus on the individual
+              behind every smile. We bring aligner treatment, implant
+              dentistry and comprehensive dental care together, with
+              treatment discussions shaped around each patient's
+              needs and goals.
             </p>
 
             <p>
-              From clear aligner treatment and dental implants to
-              smile designing, oral and maxillofacial procedures,
-              zirconia crowns and restorative dentistry, every
-              treatment plan is designed around your individual
-              dental needs.
+              Whether you are exploring Invisalign or other clear
+              aligners, replacing missing teeth with dental implants,
+              or seeking preventive, restorative or cosmetic care,
+              our team helps you understand the available options
+              before you decide on treatment.
             </p>
 
             <p>
-              Our approach focuses on precision, comfort, clear
-              treatment planning and long-term oral health while
-              maintaining natural-looking results.
+              We value clear communication, personalized planning
+              and continuity of care—from your first consultation
+              through follow-up visits.
             </p>
           </div>
-
-          {/* RIGHT */}
 
           <div className="why-right">
             <div className="why-card">
               <div className="why-number">01</div>
 
-              <h3>Experienced Specialists</h3>
+              <h3>Focused Dental Expertise</h3>
 
               <p>
-                Our dental specialists provide personalized care
-                across aligners, implants, cosmetic dentistry and
-                advanced restorative treatments.
+                Dedicated clinical profiles for implant dentistry,
+                Invisalign and cosmetic dentistry help patients
+                understand who may guide their care.
               </p>
             </div>
 
             <div className="why-card active-card">
               <div className="why-number">02</div>
 
-              <h3>Ethical, Patient-First Care</h3>
+              <h3>Care Built Around You</h3>
 
               <p>
-                Transparent treatment planning, honest
-                recommendations and patient education before
-                every procedure.
+                We take time to understand your concerns, explain
+                suitable options and shape recommendations around
+                your dental needs.
               </p>
             </div>
 
             <div className="why-card active-card">
               <div className="why-number">03</div>
 
-              <h3>Advanced Technology</h3>
+              <h3>Modern Treatment Options</h3>
 
               <p>
-                Digital diagnostics, 3D planning, laser dentistry
-                and modern equipment support precise and
-                predictable treatment.
+                Explore contemporary clear aligner solutions,
+                implant dentistry and cosmetic treatments in
+                one clinic.
               </p>
             </div>
 
             <div className="why-card">
               <div className="why-number">04</div>
 
-              <h3>Tailored Dental Experience</h3>
+              <h3>Comprehensive Dental Care</h3>
 
               <p>
-                Every patient receives a customized treatment
-                experience in a calm, premium and comfortable
-                environment.
+                From smile alignment and permanent tooth replacement
+                to general, restorative and cosmetic care, multiple
+                needs can be discussed with one dental team.
               </p>
             </div>
           </div>
@@ -226,8 +225,50 @@ function Hero() {
               Explore personalized dental treatments at F&H
               Aligners & Implant Dental Clinic in Bistupur,
               Jamshedpur. Our team provides modern solutions for
-              smile correction, tooth replacement, oral health and
-              cosmetic dental care.
+              smile correction, permanent tooth replacement,
+              oral health and cosmetic dental care.
+            </p>
+          </div>
+
+          <div
+            className="aligner-intro"
+            aria-labelledby="aligner-intro-heading"
+          >
+            <h3 id="aligner-intro-heading">
+              Invisalign &amp; Clear Aligner Treatment
+            </h3>
+
+            <p>
+              Clear aligners are transparent, removable trays
+              planned to move teeth gradually towards improved
+              alignment. Invisalign is a clear aligner treatment
+              option that may help address selected spacing,
+              crowding and bite concerns. Because every smile is
+              different, treatment begins with a dental assessment
+              to understand your needs and determine whether
+              aligners are suitable. The trays can be removed for
+              meals, brushing and flossing, while regular reviews
+              help your dentist monitor progress. At F&amp;H
+              Aligners &amp; Implant Dental Clinic, we focus on
+              explaining your options and planning care around
+              your smile goals.
+            </p>
+          </div>
+
+          {/* PATIENT COMFORT / PAINLESS DENTISTRY */}
+
+          <div className="aligner-intro">
+            <h3>Comfort-Focused &amp; Painless Dentistry</h3>
+
+            <p>
+              We understand that some patients feel anxious about
+              dental procedures. Our approach focuses on patient
+              comfort, clear communication and appropriate
+              pain-management options according to the treatment
+              required. If you are looking for painless dentistry
+              in Jamshedpur, a consultation can help you understand
+              the available procedures and ways to make your
+              dental experience more comfortable.
             </p>
           </div>
 
@@ -239,16 +280,16 @@ function Hero() {
                 <FaSmile />
               </div>
 
-              <h3>Clear Aligners</h3>
+              <h3>Invisalign &amp; Clear Aligners</h3>
 
               <p>
                 Discreet orthodontic treatment designed to
-                gradually improve tooth alignment and create a
-                confident smile.
+                gradually improve tooth alignment and create
+                a confident smile.
               </p>
 
               <Link
-                to="/services"
+                to="/treatments/clear-aligners-jamshedpur"
                 aria-label="Learn more about clear aligners"
               >
                 Learn More
@@ -266,14 +307,14 @@ function Hero() {
               <h3>Dental Implants</h3>
 
               <p>
-                Modern tooth replacement solutions designed to
-                restore oral function, comfort and a natural-looking
-                smile.
+                Permanent tooth replacement options designed
+                to replace missing teeth and help restore oral
+                function and a natural-looking smile.
               </p>
 
               <Link
-                to="/services"
-                aria-label="Learn more about dental implants"
+                to="/treatments/dental-implants-jamshedpur"
+                aria-label="Learn more about dental implants and permanent tooth replacement"
               >
                 Learn More
                 <FaArrowRight />
@@ -291,12 +332,12 @@ function Hero() {
 
               <p>
                 Personalized cosmetic dental treatments focused
-                on improving smile aesthetics while maintaining a
-                natural appearance.
+                on improving smile aesthetics while maintaining
+                a natural appearance.
               </p>
 
               <Link
-                to="/services"
+                to="/treatments/smile-makeover-jamshedpur"
                 aria-label="Learn more about smile makeover"
               >
                 Learn More
@@ -314,13 +355,37 @@ function Hero() {
               <h3>Teeth Whitening</h3>
 
               <p>
-                Professional dental whitening care to help improve
+                Professional teeth whitening care to help improve
                 the appearance of stained or discolored teeth.
               </p>
 
               <Link
-                to="/services"
+                to="/treatments/teeth-whitening-jamshedpur"
                 aria-label="Learn more about teeth whitening"
+              >
+                Learn More
+                <FaArrowRight />
+              </Link>
+            </article>
+
+            {/* DENTAL VENEERS */}
+
+            <article className="treatment-card">
+              <div className="treatment-icon">
+                <FaSmile />
+              </div>
+
+              <h3>Dental Veneers</h3>
+
+              <p>
+                Cosmetic dental coverings that may help improve
+                the appearance of tooth shape, color and selected
+                smile concerns.
+              </p>
+
+              <Link
+                to="/treatments/dental-veneers-jamshedpur"
+                aria-label="Learn more about dental veneers in Jamshedpur"
               >
                 Learn More
                 <FaArrowRight />
@@ -338,8 +403,8 @@ function Hero() {
 
               <p>
                 Modern laser-assisted dental procedures designed
-                for precision and minimally invasive treatment where
-                clinically appropriate.
+                for precision and minimally invasive treatment
+                where clinically appropriate.
               </p>
 
               <Link
@@ -397,8 +462,6 @@ function Hero() {
         aria-labelledby="director-heading"
       >
         <div className="container director-container">
-          {/* IMAGE */}
-
           <div className="director-image">
             <img
               src={directorImage}
@@ -407,11 +470,9 @@ function Hero() {
             />
 
             <div className="director-badge">
-              Director & Invisalign Provider
+              Invisalign Provider &amp; Cosmetic Dentistry
             </div>
           </div>
-
-          {/* CONTENT */}
 
           <div className="director-content">
             <span className="section-tag">
@@ -436,8 +497,9 @@ function Hero() {
               Every patient who walks through our doors deserves
               honesty, comfort, precision and personalized
               attention. By combining digital dentistry,
-              evidence-based treatment and modern technology, our
-              goal is to provide care tailored to every individual.
+              evidence-based treatment and modern technology,
+              our goal is to provide care tailored to every
+              individual.
             </p>
 
             <p>
@@ -448,10 +510,10 @@ function Hero() {
             </p>
 
             <div className="director-sign">
-              <h3>Dr. Fida, M.D.S.</h3>
+              <h3>Dr. Fida</h3>
 
               <span>
-                Director & Invisalign Provider
+                Invisalign Provider &amp; Cosmetic Dentistry
               </span>
 
               <small>
@@ -514,10 +576,10 @@ function Hero() {
             </div>
 
             <Link
-              to="/gallery"
+              to="/services"
               className="transform-btn"
             >
-              View More Cases
+              Explore Our Treatments
               <FaArrowRight />
             </Link>
           </div>
@@ -569,9 +631,11 @@ function Hero() {
               loading="lazy"
             />
 
+            {/* VERIFIED EXPERIENCE BADGE - RETAINED */}
+
             <div className="experience-card">
               <div className="exp-icon">
-                🏆
+                <FaClinicMedical />
               </div>
 
               <div className="exp-text">
@@ -582,9 +646,14 @@ function Hero() {
           </div>
         </div>
       </section>
+
+      {/* =========================================================
+          INSIDE F&H - CLINIC GALLERY
+      ========================================================== */}
+
+      <ClinicGallery />
     </>
   );
 }
 
 export default Hero;
-

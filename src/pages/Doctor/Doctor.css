@@ -1,303 +1,941 @@
-/* --- HERO SECTION STYLES WITH WHITE FADE --- */
+
+/* =========================================================
+   F&H ALIGNERS & IMPLANT DENTAL CLINIC
+   DOCTORS PAGE
+   Warm Ivory | Black Glassmorphism | Champagne Gold
+========================================================= */
+
+.doctor-section,
+.doctor-section *,
+.doctor-hero,
+.doctor-hero * {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   01. HERO — CLINIC RECEPTION IMAGE
+========================================================= */
+
 .doctor-hero {
   position: relative;
-  height: 400px;
-  background: #111;
-  background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070');
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 360px;
+  min-height: 360px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+
   overflow: hidden;
+  isolation: isolate;
+
+  background-color: #292722;
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+
+  text-align: center;
 }
 
-.hero-overlay {
+.doctor-hero .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
-  z-index: 1;
+  inset: 0;
+  z-index: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 13, 12, .62),
+      rgba(12, 13, 12, .34),
+      rgba(12, 13, 12, .52)
+    );
 }
 
-/* Smooth white fade transition out of the hero image */
-.hero-fade-bottom {
+.doctor-hero .hero-fade-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 120px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-  z-index: 2;
+  height: 100px;
+  z-index: 1;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(15, 15, 13, .3)
+  );
 }
 
-.hero-content {
+.doctor-hero .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
+
+  width: 100%;
+  padding: 30px 20px;
+}
+
+.doctor-hero .hero-content h1 {
+  margin: 0 0 15px;
+
   color: #fff;
-  font-family: "Poppins", sans-serif;
-  margin-top: -30px;
-}
-
-.hero-content h1 {
-  font-size: 52px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  letter-spacing: 1.5px;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.hero-content p {
-  font-size: 15px;
-  color: var(--gold, #c5a880);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(38px, 5vw, 60px);
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  line-height: 1.2;
+  letter-spacing: -.6px;
+
+  text-shadow: 0 3px 18px rgba(0, 0, 0, .45);
 }
 
-/* --- MAIN DOCTOR SECTION --- */
+.doctor-hero .hero-content p {
+  margin: 0;
+
+  color: #e7ce91;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .6);
+}
+
+/* =========================================================
+   02. MAIN DOCTORS SECTION
+========================================================= */
+
 .doctor-section {
-  padding: 60px 0 120px 0;
-  background: #fff; /* Changed to match pure background aesthetics */
+  position: relative;
+  width: 100%;
+  padding: 90px 0 100px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 5% 15%,
+      rgba(199, 160, 70, .07),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 95% 75%,
+      rgba(199, 160, 70, .055),
+      transparent 28%
+    ),
+    #f5f2eb;
 }
 
-.section-title {
+.doctor-section .container {
+  width: 92%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   03. SECTION HEADING
+========================================================= */
+
+.doctor-section .section-title {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto 65px;
+
   text-align: center;
-  margin-bottom: 60px;
 }
 
-.section-title span {
-  color: var(--gold, #c5a880);
+.doctor-section .section-title > span {
+  display: inline-block;
+  margin-bottom: 13px;
+
+  color: #a78335;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 3px;
-  font-size: 13px;
-  display: inline-block;
-  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
-.section-title h2 {
-  font-size: 40px;
-  font-weight: 700;
-  color: #111;
-  margin: 0 0 18px 0;
+.doctor-section .section-title h2 {
+  margin: 0 0 17px;
+
+  color: #252520;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 600;
+  line-height: 1.25;
 }
 
-.section-title p {
-  max-width: 640px;
+.doctor-section .section-title p {
+  max-width: 720px;
   margin: 0 auto;
-  color: #666;
-  font-size: 16px;
-  line-height: 1.7;
+
+  color: #6d6b64;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.85;
 }
 
-/* Premium Layout Controls */
-.doctor-card {
+/* =========================================================
+   04. DOCTOR CARDS — BLACK GLASSMORPHIC DESIGN
+========================================================= */
+
+.doctor-section .doctor-card {
+  position: relative;
+
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 80px;
-  align-items: center;
-  margin-top: 100px;
-  padding: 40px;
-  border-radius: 24px;
-  background: #fdfdfd;
-  border: 1px solid #f7f7f7;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
-  transition: all 0.4s ease;
-}
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
 
-.doctor-card:hover {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
-  border-color: rgba(197, 168, 128, 0.15);
-}
-
-/* Alternating rows logic */
-.reverse {
-  grid-template-columns: 1.1fr 0.9fr;
-}
-
-.reverse .doctor-image {
-  order: 2;
-}
-
-.reverse .doctor-content {
-  order: 1;
-}
-
-/* Image Premium Frame Components */
-.doctor-image {
-  position: relative;
   width: 100%;
-}
+  min-height: 500px;
+  margin: 0 auto 55px;
 
-.doctor-image img {
-  width: 100%;
-  object-fit: cover;
+  overflow: hidden;
+
+  border: 1px solid rgba(199, 160, 70, .42);
   border-radius: 20px;
-  box-shadow: var(--shadow, 0 15px 35px rgba(0, 0, 0, 0.08));
-  position: relative;
-  z-index: 2;
-  transition: transform 0.4s ease;
+
+  background:
+    linear-gradient(
+      135deg,
+      #292a26 0%,
+      #151714 48%,
+      #101210 100%
+    );
+
+  box-shadow:
+    0 18px 45px rgba(25, 25, 22, .14),
+    0 5px 14px rgba(0, 0, 0, .08),
+    inset 0 1px 0 rgba(255, 255, 255, .09);
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease,
+    border-color .4s ease;
 }
 
-.doctor-card:hover .doctor-image img {
-  transform: scale(1.02);
-}
+/* Glass shine */
 
-.image-border-deco {
+.doctor-section .doctor-card::before {
+  content: "";
   position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 80%;
-  height: 80%;
-  border-top: 3px solid var(--gold, #c5a880);
-  border-left: 3px solid var(--gold, #c5a880);
-  border-radius: 20px 0 0 0;
+
+  top: -80%;
+  left: -65%;
+
+  width: 55%;
+  height: 260%;
+
+  transform: rotate(28deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, .035),
+    rgba(199, 160, 70, .075),
+    transparent
+  );
+
+  pointer-events: none;
+  z-index: 2;
+
+  transition: left .9s ease;
+}
+
+.doctor-section .doctor-card:hover::before {
+  left: 125%;
+}
+
+.doctor-section .doctor-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(199, 160, 70, .75);
+
+  box-shadow:
+    0 25px 55px rgba(20, 20, 17, .2),
+    0 0 25px rgba(199, 160, 70, .09),
+    inset 0 1px 0 rgba(255, 255, 255, .12);
+}
+
+/* =========================================================
+   05. ALTERNATING CARD LAYOUT
+========================================================= */
+
+/* Normal: Image left, content right */
+
+.doctor-section .doctor-card:not(.reverse) .doctor-image {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.doctor-section .doctor-card:not(.reverse) .doctor-content {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Reverse: Content left, image right */
+
+.doctor-section .doctor-card.reverse .doctor-image {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.doctor-section .doctor-card.reverse .doctor-content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* =========================================================
+   06. FULL-COVER DOCTOR PHOTOGRAPHS
+========================================================= */
+
+.doctor-section .doctor-image {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+
+  padding: 0;
+  overflow: hidden;
+
+  background: #20211e;
+}
+
+.doctor-section .doctor-image img {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
+  max-width: none;
+
+  object-fit: cover;
+  object-position: center 20%;
+
+  border-radius: 0;
+
+  filter: saturate(.94) contrast(1.03);
+
+  transition:
+    transform .7s ease,
+    filter .5s ease;
+}
+
+.doctor-section .doctor-card:hover .doctor-image img {
+  transform: scale(1.035);
+  filter: saturate(1.04) contrast(1.04);
+}
+
+/* Dr. Vasan photograph */
+
+.doctor-section .doctor-image img.doctor-vasan-photo {
+  object-position: center 15%;
+}
+
+/* Dr. Dutta photograph */
+
+.doctor-section .doctor-image img.doctor-dutta-photo {
+  object-position: center 12%;
+}
+
+/* Subtle gold image border */
+
+.doctor-section .image-border-deco {
+  position: absolute;
+  inset: 13px;
+
+  border: 1px solid rgba(199, 160, 70, .5);
+  border-radius: 9px;
+
+  pointer-events: none;
   z-index: 1;
-  transition: all 0.4s ease;
 }
 
-.reverse .image-border-deco {
-  left: auto;
-  right: -15px;
-  border-left: none;
-  border-right: 3px solid var(--gold, #c5a880);
-  border-radius: 0 20px 0 0;
+/* =========================================================
+   07. DOCTOR INTRODUCTION CONTENT
+========================================================= */
+
+.doctor-section .doctor-content {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 48px clamp(30px, 4vw, 62px);
+
+  color: #f8f6ef;
+  text-align: left;
 }
 
-.doctor-card:hover .image-border-deco {
-  width: 103%;
-  height: 105%;
-}
+/* Specialty tag */
 
-/* Typography & Content Layout */
-.doctor-tag {
-  display: inline-block;
-  padding: 6px 16px;
-  background: rgba(197, 168, 128, 0.12);
-  color: var(--gold, #c5a880);
+.doctor-section .doctor-tag {
+  display: inline-flex;
+  align-items: center;
+
+  max-width: 100%;
+  margin-bottom: 17px;
+  padding: 8px 15px;
+
+  border: 1px solid rgba(199, 160, 70, .48);
   border-radius: 30px;
+
+  background: rgba(199, 160, 70, .1);
+
+  color: #dfc27d;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+/* Doctor name */
+
+.doctor-section .doctor-content h2 {
+  width: 100%;
+  margin: 0 0 9px;
+
+  color: #fff;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 3.4vw, 44px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Doctor specialty */
+
+.doctor-section .doctor-content h4 {
+  width: 100%;
+  margin: 0 0 22px;
+
+  color: #c7a046;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: .35px;
+}
+
+/* Description paragraphs */
+
+.doctor-section .doctor-content p {
+  display: block;
+
+  width: 100%;
+  max-width: none;
+
+  margin: 0 0 15px;
+
+  color: rgba(245, 244, 237, .82);
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: .05px;
+
+  text-align: left;
+
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* Strong text */
+
+.doctor-section .doctor-content p strong {
+  color: #e8d29b;
+  font-weight: 700;
+}
+
+/* =========================================================
+   08. EXPERIENCE BADGE
+========================================================= */
+
+.doctor-section .doctor-experience {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  width: fit-content;
+  max-width: 100%;
+
+  margin: 8px 0 18px;
+  padding: 12px 17px;
+
+  border: 1px solid rgba(199, 160, 70, .35);
+  border-radius: 9px;
+
+  background: rgba(199, 160, 70, .09);
+}
+
+.doctor-section .doctor-experience svg {
+  flex-shrink: 0;
+
+  color: #d5b45f;
+  font-size: 19px;
+}
+
+.doctor-section .doctor-experience h3 {
+  margin: 0;
+
+  color: #ead59c;
+
   font-size: 13px;
   font-weight: 600;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: .4px;
 }
 
-.doctor-content h2 {
-  font-size: 38px;
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 6px;
-}
+/* =========================================================
+   09. SPECIALTY FEATURES
+========================================================= */
 
-.doctor-content h4 {
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--gold, #c5a880);
-  margin-bottom: 24px;
-  letter-spacing: 0.5px;
-}
-
-.doctor-content p {
-  font-size: 15.5px;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 16px;
-}
-
-/* Features Grid */
-.doctor-features {
+.doctor-section .doctor-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin: 35px 0;
-}
-
-.doctor-features div {
-  display: flex;
   align-items: center;
-  gap: 10px;
-  background: #ffffff;
-  padding: 12px 20px;
-  border-radius: 40px;
-  border: 1px solid #f0f0f0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  justify-content: flex-start;
+
+  width: 100%;
+  gap: 9px;
+
+  margin: 14px 0 24px;
+}
+
+.doctor-section .doctor-features > div {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 8px;
+  min-height: 37px;
+
+  padding: 9px 11px;
+
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, .045);
+
+  transition:
+    background .3s ease,
+    border-color .3s ease,
+    transform .3s ease;
+}
+
+.doctor-section .doctor-features > div:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(199, 160, 70, .5);
+  background: rgba(199, 160, 70, .11);
+}
+
+.doctor-section .doctor-features svg {
+  flex-shrink: 0;
+
+  color: #d1ad59;
   font-size: 14px;
+}
+
+.doctor-section .doctor-features span {
+  color: rgba(255, 255, 255, .88);
+
+  font-size: 11px;
   font-weight: 500;
-  color: #333;
-  transition: all 0.3s ease;
+  line-height: 1.4;
 }
 
-.doctor-card:hover .doctor-features div {
-  border-color: #e8e8e8;
-  transform: translateY(-1px);
-}
+/* =========================================================
+   10. CONSULTATION BUTTON
+========================================================= */
 
-.doctor-features svg {
-  color: var(--gold, #c5a880);
-  font-size: 16px;
-}
+.doctor-section .consult-btn {
+  position: relative;
 
-/* Premium Consultation Buttons */
-.consult-btn {
-  padding: 16px 36px;
-  background: var(--gold, #c5a880);
-  color: #fff;
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+  margin-top: 3px;
+  padding: 13px 25px;
+
+  overflow: hidden;
+
+  border: 1px solid #d4b15d;
   border-radius: 50px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 6px 20px rgba(197, 168, 128, 0.25);
-  transition: all 0.35s ease;
+
+  background: linear-gradient(
+    120deg,
+    #b48b36,
+    #d8bb72
+  );
+
+  color: #171714;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .65px;
+
+  text-decoration: none;
+
+  box-shadow: 0 7px 20px rgba(199, 160, 70, .18);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    background .3s ease;
 }
 
-.consult-btn:hover {
-  background: #111;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  transform: translateY(-1px);
+.doctor-section .consult-btn:hover {
+  transform: translateY(-3px);
+
+  background: linear-gradient(
+    120deg,
+    #d8bb72,
+    #f0d99c
+  );
+
+  color: #171714;
+
+  box-shadow: 0 10px 25px rgba(199, 160, 70, .3);
 }
 
-/* --- RESPONSIVE BREAKPOINTS --- */
-@media(max-width: 992px) {
-  .doctor-card, 
-  .doctor-card.reverse {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 24px;
-    margin-top: 60px;
+.doctor-section .consult-btn:focus-visible {
+  outline: 3px solid rgba(199, 160, 70, .55);
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   11. LARGE TABLETS / SMALL LAPTOPS
+========================================================= */
+
+@media (max-width: 1100px) {
+  .doctor-section .container {
+    width: 94%;
   }
 
-  .reverse .doctor-image,
-  .doctor-image {
-    order: 1;
-    max-width: 450px;
-    margin: 0 auto;
+  .doctor-section .doctor-card {
+    min-height: 460px;
   }
 
-  .reverse .doctor-content,
-  .doctor-content {
-    order: 2;
-    text-align: center;
+  .doctor-section .doctor-image {
+    min-height: 460px;
   }
 
-  .doctor-features {
-    justify-content: center;
+  .doctor-section .doctor-content {
+    padding: 38px 30px;
   }
 
+  .doctor-section .doctor-content p {
+    font-size: 13.5px;
+    line-height: 1.85;
+  }
+
+  .doctor-section .doctor-features {
+    gap: 7px;
+  }
+}
+
+/* =========================================================
+   12. TABLET
+========================================================= */
+
+@media (max-width: 850px) {
   .doctor-hero {
-    height: 320px;
+    height: 310px;
+    min-height: 310px;
   }
 
-  .hero-content h1 {
-    font-size: 38px;
+  .doctor-section {
+    padding: 75px 0 80px;
   }
 
-  .image-border-deco {
-    display: none; /* Simplifies layouts on standard tablets/phones */
+  .doctor-section .doctor-card {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    min-height: 420px;
+    margin-bottom: 38px;
+  }
+
+  .doctor-section .doctor-image {
+    min-height: 420px;
+  }
+
+  .doctor-section .doctor-content {
+    padding: 30px 24px;
+  }
+
+  .doctor-section .doctor-content h2 {
+    font-size: 33px;
+  }
+
+  .doctor-section .doctor-content h4 {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .doctor-section .doctor-content p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .doctor-section .doctor-features {
+    margin-bottom: 19px;
+  }
+
+  .doctor-section .doctor-features > div {
+    padding: 8px 9px;
+  }
+}
+
+/* =========================================================
+   13. MOBILE — STACKED CARDS
+========================================================= */
+
+@media (max-width: 767px) {
+  .doctor-hero {
+    height: 280px;
+    min-height: 280px;
+    background-position: center 55%;
+  }
+
+  .doctor-section {
+    padding: 65px 0 70px;
+  }
+
+  .doctor-section .container {
+    width: 92%;
+  }
+
+  .doctor-section .section-title {
+    margin-bottom: 42px;
+  }
+
+  .doctor-section .section-title p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* Every card stacks image first */
+
+  .doctor-section .doctor-card,
+  .doctor-section .doctor-card.reverse {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-height: auto;
+
+    margin-bottom: 32px;
+    border-radius: 16px;
+  }
+
+  .doctor-section .doctor-card .doctor-image,
+  .doctor-section .doctor-card.reverse .doctor-image {
+    order: 1;
+
+    width: 100%;
+    height: 360px;
+    min-height: 360px;
+  }
+
+  .doctor-section .doctor-card .doctor-content,
+  .doctor-section .doctor-card.reverse .doctor-content {
+    order: 2;
+
+    width: 100%;
+    padding: 30px 26px 32px;
+  }
+
+  .doctor-section .doctor-image img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    object-fit: cover;
+    object-position: center 18%;
+  }
+
+  .doctor-section .doctor-image img.doctor-vasan-photo {
+    object-position: center 12%;
+  }
+
+  .doctor-section .doctor-image img.doctor-dutta-photo {
+    object-position: center 8%;
+  }
+
+  .doctor-section .doctor-content h2 {
+    font-size: 36px;
+  }
+
+  .doctor-section .doctor-content p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+}
+
+/* =========================================================
+   14. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .doctor-hero {
+    height: 245px;
+    min-height: 245px;
+    background-position: center 55%;
+  }
+
+  .doctor-hero .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .doctor-hero .hero-content p {
+    font-size: 11px;
+  }
+
+  .doctor-section {
+    padding: 55px 0 60px;
+  }
+
+  .doctor-section .section-title {
+    margin-bottom: 35px;
+  }
+
+  .doctor-section .section-title h2 {
+    font-size: 29px;
+  }
+
+  .doctor-section .section-title p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .doctor-section .doctor-card,
+  .doctor-section .doctor-card.reverse {
+    margin-bottom: 25px;
+    border-radius: 14px;
+  }
+
+  .doctor-section .doctor-card .doctor-image,
+  .doctor-section .doctor-card.reverse .doctor-image {
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .doctor-section .image-border-deco {
+    inset: 10px;
+  }
+
+  .doctor-section .doctor-content,
+  .doctor-section .doctor-card .doctor-content {
+    padding: 25px 20px 27px;
+  }
+
+  .doctor-section .doctor-tag {
+    margin-bottom: 13px;
+    padding: 7px 11px;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .doctor-section .doctor-content h2 {
+    font-size: 31px;
+  }
+
+  .doctor-section .doctor-content h4 {
+    margin-bottom: 15px;
+    font-size: 12px;
+  }
+
+  .doctor-section .doctor-content p {
+    margin-bottom: 13px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .doctor-section .doctor-experience {
+    padding: 10px 13px;
+  }
+
+  .doctor-section .doctor-experience h3 {
+    font-size: 12px;
+  }
+
+  .doctor-section .doctor-features {
+    gap: 7px;
+    margin: 12px 0 20px;
+  }
+
+  .doctor-section .doctor-features > div {
+    min-height: 34px;
+    padding: 7px 9px;
+    gap: 6px;
+  }
+
+  .doctor-section .doctor-features span {
+    font-size: 10px;
+  }
+
+  .doctor-section .consult-btn {
+    width: 100%;
+    min-height: 44px;
+  }
+}
+
+/* =========================================================
+   15. ACCESSIBILITY — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .doctor-section .doctor-card,
+  .doctor-section .doctor-card::before,
+  .doctor-section .doctor-image img,
+  .doctor-section .doctor-features > div,
+  .doctor-section .consult-btn {
+    transition: none;
+  }
+
+  .doctor-section .doctor-card:hover,
+  .doctor-section .doctor-card:hover .doctor-image img,
+  .doctor-section .doctor-features > div:hover,
+  .doctor-section .consult-btn:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   DOCTORS HERO — NAVBAR OVERLAP FIX
+========================================================= */
+
+.doctor-hero {
+  margin-top: 75px;
+  background-position: center 55%;
+}
+
+/* Tablet */
+@media (max-width: 767px) {
+  .doctor-hero {
+    margin-top: 65px;
+    background-position: center 55%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .doctor-hero {
+    margin-top: 60px;
+    background-position: center 55%;
   }
 }

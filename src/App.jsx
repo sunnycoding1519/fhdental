@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import FloatingButtons from "./components/FloatingButtons/FloatingButtons";
+import ScrollToTop from "./components/ScrollToTop";
 
 import SEO from "./components/SEO";
 
@@ -13,24 +14,19 @@ import Services from "./pages/Services/Services";
 import Doctor from "./pages/Doctor/Doctor";
 import FAQ from "./pages/FAQ/FAQ";
 import Contact from "./pages/Contact/Contact";
-
 import Treatment from "./pages/Treatment/Treatment";
-
-
-
-
 
 function App() {
   return (
     <BrowserRouter>
-      <SEO />
+      <ScrollToTop />
 
+      <SEO />
       <Navbar />
 
       <Routes>
         {/* Main Pages */}
         <Route path="/" element={<Home />} />
-
         <Route path="/about" element={<WhyUs />} />
 
         {/* Redirect old About URL */}
@@ -40,24 +36,18 @@ function App() {
         />
 
         <Route path="/services" element={<Services />} />
-
         <Route path="/doctor" element={<Doctor />} />
-
         <Route path="/faq" element={<FAQ />} />
-
         <Route path="/contact" element={<Contact />} />
 
         {/* Treatment Pages */}
-        <Route
-          path="/treatments/:slug"
-          element={<Treatment />}
-        />
+        <Route path="/treatments/:slug" element={<Treatment />} />
 
-<Route path="*" element={<Navigate to="/" replace />} />
+        {/* Redirect unknown URLs */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
       <Footer />
-
       <FloatingButtons />
     </BrowserRouter>
   );
