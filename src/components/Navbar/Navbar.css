@@ -1,339 +1,534 @@
-/*==============================
-        PREMIUM NAVBAR
-==============================*/
+
+/* =========================================================
+   F&H ALIGNERS & IMPLANT DENTAL CLINIC
+   PREMIUM LUXURY NAVBAR
+   Charcoal | Champagne Gold | Glassmorphism
+========================================================= */
+
+/* ---------- DESIGN VARIABLES ---------- */
+
+:root {
+  --nav-black: #111210;
+  --nav-black-soft: #1b1c19;
+  --nav-gold: #c7a046;
+  --nav-gold-light: #e5d3a7;
+  --nav-ivory: #faf8f3;
+  --nav-muted: #c4c0b6;
+  --nav-transition: 0.3s ease;
+}
+
+/* ---------- NAVBAR BASE ---------- */
+
 .navbar {
   position: fixed;
-  top: 22px;
+  top: 0;
   left: 0;
   width: 100%;
-  z-index: 2005;
-  transition: all .35s cubic-bezier(.4, 0, .2, 1);
+  z-index: 1000;
+
+  padding: 13px 0;
+
+  background: rgba(17, 18, 16, 0.94);
+  border-bottom: 1px solid rgba(199, 160, 70, 0.22);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    padding 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
+
+/* Gold top accent */
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--nav-gold),
+    var(--nav-gold-light),
+    var(--nav-gold),
+    transparent
+  );
+
+  opacity: 0.8;
+}
+
+/* ---------- SCROLLED NAVBAR ---------- */
 
 .navbar.scrolled {
-  top: 12px;
+  padding: 8px 0;
+
+  background: rgba(12, 13, 11, 0.97);
+  border-bottom-color: rgba(199, 160, 70, 0.32);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    0 1px 0 rgba(199, 160, 70, 0.08);
 }
 
+/* ---------- NAV CONTAINER ---------- */
+
 .nav-container {
-  width: 100%;
-  max-width: 1320px;
+  width: 90%;
+  max-width: 1440px;
   margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 32px;
-  background: rgba(255, 255, 255, .92);
-  -webkit-backdrop-filter: blur(18px);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(199, 160, 70, .18);
-  border-radius: 70px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, .08), 0 3px 12px rgba(199, 160, 70, .08);
-  position: relative;
-  transition: all .35s cubic-bezier(.4, 0, .2, 1);
+
+  gap: 25px;
 }
 
-.navbar.scrolled .nav-container {
-  padding: 11px 28px;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, .12), 0 4px 15px rgba(199, 160, 70, .10);
-}
+/* ---------- LOGO ---------- */
 
-/*==============================
-             LOGO
-==============================*/
 .logo {
   display: flex;
   align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
-  text-decoration: none;
-  transition: all .35s cubic-bezier(.4, 0, .2, 1);
-}
+  gap: 11px;
 
-.logo:hover {
-  transform: translateY(-2px);
+  min-width: max-content;
+  text-decoration: none;
+
+  transition: var(--nav-transition);
 }
 
 .logo img {
-  width: 68px;
-  height: 68px;
+  width: 57px;
+  height: 57px;
+
   object-fit: contain;
-  filter: drop-shadow(0 6px 14px rgba(199, 160, 70, .15));
-  transition: all .35s cubic-bezier(.4, 0, .2, 1);
+  display: block;
+
+  transition: var(--nav-transition);
 }
 
 .navbar.scrolled .logo img {
-  width: 58px;
-  height: 58px;
-}
-
-.logo:hover img {
-  transform: scale(1.04);
+  width: 49px;
+  height: 49px;
 }
 
 .logo-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
   line-height: 1.1;
 }
 
 .logo-content h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 26px;
-  font-weight: 700;
-  color: #111;
-  letter-spacing: .5px;
   margin: 0;
-}
 
-.navbar.scrolled .logo-content h2 {
-  font-size: 24px;
+  color: var(--nav-gold-light);
+
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
 .logo-content span {
   margin-top: 3px;
-  font-size: 11px;
-  font-weight: 600;
+
+  color: var(--nav-ivory);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.1px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #c7a046;
 }
 
 .logo-content small {
-  margin-top: 2px;
-  font-size: 11px;
+  margin-top: 3px;
+
+  color: var(--nav-gold);
+  font-family: "Poppins", sans-serif;
+  font-size: 9px;
   font-weight: 500;
-  letter-spacing: 1.5px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: #666;
 }
 
-/*==============================
-             MENU
-==============================*/
+/* ---------- DESKTOP NAVIGATION ---------- */
+
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 32px;
-  transition: all .35s cubic-bezier(.4, 0, .2, 1);
+  justify-content: center;
+  gap: clamp(18px, 2.3vw, 34px);
 }
 
 .nav-menu a {
   position: relative;
-  font-size: 15px;
-  font-weight: 600;
-  color: #1b1b1b;
+
+  padding: 10px 0;
+
+  color: rgba(250, 248, 243, 0.82);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.35px;
+
   text-decoration: none;
-  letter-spacing: .3px;
-  padding: 6px 0;
-  transition: all .3s ease;
+  white-space: nowrap;
+
+  transition:
+    color var(--nav-transition),
+    transform var(--nav-transition);
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
-  color: #c7a046;
-}
-
+/* Gold underline */
 .nav-menu a::after {
   content: "";
+
   position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
+  left: 0;
+  bottom: 2px;
+
   width: 0;
-  height: 3px;
-  border-radius: 30px;
-  background: linear-gradient(90deg, #C7A046, #E7CB77);
-  transition: width .3s ease;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    var(--nav-gold),
+    var(--nav-gold-light)
+  );
+
+  border-radius: 5px;
+
+  transition: width var(--nav-transition);
 }
 
-.nav-menu a:hover::after,
-.nav-menu a.active::after {
+.nav-menu a:hover {
+  color: var(--nav-gold-light);
+  transform: translateY(-1px);
+}
+
+.nav-menu a:hover::after {
   width: 100%;
 }
 
-/*==============================
-       RIGHT SIDE & CTA
-==============================*/
+/* Active route */
+.nav-menu a.active,
+.nav-menu a.gallery-active {
+  color: var(--nav-gold-light);
+  font-weight: 600;
+}
+
+.nav-menu a.active::after,
+.nav-menu a.gallery-active::after {
+  width: 100%;
+}
+
+/* ---------- RIGHT SIDE ---------- */
+
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 16px;
-  position: relative;
-  z-index: 2105;
+  gap: 15px;
 }
+
+/* ---------- APPOINTMENT BUTTON ---------- */
 
 .book-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 14px 28px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #C7A046, #B98925);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: .2px;
-  box-shadow: 0 12px 30px rgba(199, 160, 70, .25);
-  white-space: nowrap;
-  transition: all .35s cubic-bezier(.4, 0, .2, 1);
-}
+  gap: 9px;
 
-.book-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(199, 160, 70, .38);
+  min-height: 45px;
+  padding: 0 21px;
+
+  color: #171713;
+  background: linear-gradient(
+    135deg,
+    #e5d3a7 0%,
+    #c7a046 55%,
+    #b58b39 100%
+  );
+
+  border: 1px solid rgba(229, 211, 167, 0.8);
+  border-radius: 50px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  box-shadow:
+    0 5px 18px rgba(199, 160, 70, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  transition:
+    transform var(--nav-transition),
+    box-shadow var(--nav-transition),
+    background var(--nav-transition);
 }
 
 .book-btn svg {
   font-size: 14px;
 }
 
-/* Base state toggle helper hides mobile component elements on large width views */
+.book-btn:hover {
+  color: #111210;
+
+  background: linear-gradient(
+    135deg,
+    #f0e2bd,
+    #d5b365
+  );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 24px rgba(199, 160, 70, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
 .mobile-drawer-btn {
   display: none;
 }
 
-/*==================================
-        MENU TOGGLE BUTTON
-==================================*/
+/* ---------- MOBILE MENU ICON ---------- */
+
 .menu-icon {
   display: none;
-  width: 48px;
-  height: 48px;
-  border: none;
-  outline: none;
-  border-radius: 50%;
-  background: #fff;
-  color: #111;
-  font-size: 20px;
-  cursor: pointer;
+
+  width: 43px;
+  height: 43px;
+
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
-  z-index: 2010;
-  transition: all .3s ease;
+
+  color: var(--nav-gold-light);
+  background: rgba(199, 160, 70, 0.09);
+
+  border: 1px solid rgba(199, 160, 70, 0.35);
+  border-radius: 12px;
+
+  font-size: 19px;
+  cursor: pointer;
+
+  transition: var(--nav-transition);
 }
 
 .menu-icon:hover {
-  background: #c7a046;
-  color: #fff;
+  color: var(--nav-black);
+  background: var(--nav-gold);
 }
 
-/*==================================
-             OVERLAY
-==================================*/
+/* ---------- MOBILE OVERLAY ---------- */
+
 .nav-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, .5);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+  inset: 0;
+
+  z-index: 998;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
   opacity: 0;
   visibility: hidden;
-  transition: all .35s ease;
-  z-index: 1999;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .nav-overlay.show-overlay {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
+/* ---------- TABLET ---------- */
 
-/*==============================================================================
-                          CROSS-DEVICE SCREEN MEDIA RESPONSIVENESS
-==============================================================================*/
-
-/* --- MONITOR & INTERMEDIATE BREAKPOINT ADJUSTMENT (max-width: 1200px) --- */
-@media(max-width: 1200px) {
+@media (max-width: 1100px) {
   .nav-container {
-    padding: 12px 24px;
+    width: 93%;
+    gap: 15px;
   }
+
   .nav-menu {
-    gap: 24px;
+    gap: 19px;
   }
-  .logo-content h2 {
-    font-size: 22px;
+
+  .nav-menu a {
+    font-size: 12px;
+  }
+
+  .book-btn {
+    padding: 0 16px;
+    font-size: 11px;
   }
 }
 
-/* --- MOBILE DRAWER TRIGGER VIEWPORT SYSTEM (max-width: 991px) --- */
-@media(max-width: 991px) {
-  .menu-icon {
-    display: flex;
+/* ---------- MOBILE DRAWER ---------- */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .navbar.scrolled {
+    padding: 7px 0;
+  }
+
+  .nav-container {
+    width: 92%;
+  }
+
+  .logo img {
+    width: 51px;
+    height: 51px;
+  }
+
+  .navbar.scrolled .logo img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .logo-content h2 {
+    font-size: 23px;
+  }
+
+  .nav-right {
+    gap: 10px;
   }
 
   .desktop-btn {
     display: none;
   }
 
+  .menu-icon {
+    display: flex;
+    position: relative;
+    z-index: 1002;
+  }
+
   .nav-menu {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 320px;
-    max-width: 85%;
+    right: 0;
+
+    width: min(340px, 86%);
     height: 100vh;
-    background: rgba(255, 255, 255, .98);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    border-left: 1px solid rgba(199, 160, 70, .15);
+    height: 100dvh;
+
+    padding: 105px 30px 35px;
+
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: flex-start;
-    padding: 120px 30px 40px;
-    gap: 12px;
-    z-index: 2000;
-    box-shadow: -10px 0 40px rgba(0, 0, 0, .1);
+    gap: 5px;
+
     overflow-y: auto;
-    transition: right .4s cubic-bezier(.4, 0, .2, 1);
+
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(199, 160, 70, 0.13),
+        transparent 35%
+      ),
+      linear-gradient(
+        160deg,
+        #20211e,
+        #111210 75%
+      );
+
+    border-left: 1px solid rgba(199, 160, 70, 0.25);
+
+    box-shadow: -15px 0 45px rgba(0, 0, 0, 0.35);
+
+    transform: translateX(105%);
+    visibility: hidden;
+
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0.4s ease;
+
+    z-index: 1001;
   }
 
   .nav-menu.active {
-    right: 0;
+    transform: translateX(0);
+    visibility: visible;
   }
 
   .nav-menu a {
-    font-size: 17px;
     width: 100%;
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, .05);
+
+    padding: 15px 5px;
+
+    color: var(--nav-ivory);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   }
 
   .nav-menu a::after {
     display: none;
   }
 
-  .nav-menu a:hover {
-    padding-left: 8px;
+  .nav-menu a:hover,
+  .nav-menu a.active,
+  .nav-menu a.gallery-active {
+    color: var(--nav-gold-light);
+    background: rgba(199, 160, 70, 0.07);
+    padding-left: 13px;
   }
 
-  /* Renders appointment helper cleanly inside mobile context layout menu flow */
-  .mobile-drawer-btn {
-    display: inline-flex;
+  .nav-menu .mobile-drawer-btn {
+    display: flex;
+
     width: 100%;
-    margin-top: 20px;
-    padding: 14px;
+    margin-top: 25px;
+    padding: 0 18px;
+
+    color: #171713;
+    border-bottom: 1px solid rgba(229, 211, 167, 0.8);
+  }
+
+  .nav-menu .mobile-drawer-btn:hover {
+    color: #111210;
+    background: linear-gradient(
+      135deg,
+      #f0e2bd,
+      #d5b365
+    );
+    padding-left: 18px;
   }
 }
 
-/* --- SMALL MOBILE DISPLAY FIXES (max-width: 576px) --- */
-@media(max-width: 576px) {
-  .navbar {
-    top: 12px;
-  }
+/* ---------- SMALL MOBILE ---------- */
 
+@media (max-width: 480px) {
   .nav-container {
-    padding: 10px 16px;
-    border-radius: 20px;
+    width: 91%;
   }
 
   .logo {
-    gap: 10px;
+    gap: 8px;
   }
 
   .logo img {
@@ -341,27 +536,80 @@
     height: 46px;
   }
 
+  .navbar.scrolled .logo img {
+    width: 43px;
+    height: 43px;
+  }
+
+  .logo-content h2 {
+    font-size: 21px;
+  }
+
+  .logo-content span {
+    font-size: 9px;
+    letter-spacing: 0.8px;
+  }
+
+  .logo-content small {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .menu-icon {
+    width: 41px;
+    height: 41px;
+    font-size: 18px;
+  }
+
+  .nav-menu {
+    width: min(315px, 88%);
+    padding: 95px 25px 30px;
+  }
+}
+
+/* ---------- VERY SMALL MOBILE ---------- */
+
+@media (max-width: 360px) {
+  .logo img {
+    width: 41px;
+    height: 41px;
+  }
+
   .logo-content h2 {
     font-size: 19px;
   }
 
   .logo-content span {
-    font-size: 10px;
-    letter-spacing: 1.2px;
+    font-size: 8px;
   }
 
   .logo-content small {
-    display: none; /* Safely hide subtitle string to preserve space layout boundary */
+    font-size: 7px;
   }
 
   .menu-icon {
-    width: 42px;
-    height: 42px;
-    font-size: 18px;
+    width: 38px;
+    height: 38px;
   }
+}
 
-  .nav-menu {
-    width: 100%;
-    max-width: 100%;
+/* ---------- ACCESSIBILITY ---------- */
+
+.nav-menu a:focus-visible,
+.book-btn:focus-visible,
+.menu-icon:focus-visible,
+.logo:focus-visible {
+  outline: 2px solid var(--nav-gold-light);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .nav-menu,
+  .nav-menu a,
+  .book-btn,
+  .menu-icon,
+  .nav-overlay {
+    transition: none;
   }
 }

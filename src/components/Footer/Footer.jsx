@@ -1,102 +1,98 @@
+
 import "./Footer.css";
 import { Link } from "react-router-dom";
 
 import {
-FaInstagram,
-FaYoutube
+  FaInstagram,
+  FaPhoneAlt,
+  FaMapMarkerAlt
 } from "react-icons/fa";
 
 import logo from "../../assets/images/logo.png";
 
-function Footer(){
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container">
 
-return(
+        {/* Footer Top */}
+        <div className="footer-top">
 
-<footer className="footer">
+          <div className="footer-logo">
+            <Link to="/" aria-label="F&H Dental Clinic Home">
+              <img
+                src={logo}
+                alt="F&H Aligners & Implant Dental Clinic"
+              />
+            </Link>
 
-<div className="container">
+            <p>
+              Advanced dental care, clear aligners and dental
+              implants for confident, healthy smiles.
+            </p>
+          </div>
 
-<div className="footer-top">
+          {/* Social Links */}
+          <div className="footer-social">
+            <span>Follow us at</span>
 
-<div className="footer-logo">
+            <a
+              href="https://www.instagram.com/fhalignersandimplant/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow F&H Dental Clinic on Instagram"
+            >
+              <FaInstagram />
+            </a>
+          </div>
 
-<img
-src={logo}
-alt="F&H Dental"
-/>
+        </div>
 
-</div>
+        <div className="footer-line"></div>
 
-<div className="footer-social">
+        {/* Footer Contact Details */}
+        <div className="footer-contact">
 
-<span>Follow us at</span>
+          <div className="footer-contact-item">
+            <FaMapMarkerAlt />
+            <span>
+              Bistupur, Jamshedpur, Jharkhand
+            </span>
+          </div>
 
-<a href="#">
-<FaInstagram/>
-</a>
+          <a
+            href="tel:+919122266733"
+            className="footer-contact-item"
+          >
+            <FaPhoneAlt />
+            <span>+91 91222 66733</span>
+          </a>
 
-<a href="#">
-<FaYoutube/>
-</a>
+        </div>
 
-</div>
+        <div className="footer-line"></div>
 
-</div>
+        {/* Footer Bottom */}
+        <div className="footer-bottom">
 
-<div className="footer-line"></div>
+          <p>
+            © {new Date().getFullYear()} F&H Aligners & Implant
+            Dental Clinic. All Rights Reserved.
+          </p>
 
-<div className="footer-bottom">
+          <div className="footer-links">
+            <Link to="/about">About</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/doctor">Doctors</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/faq">FAQ</Link>
+          </div>
 
-<p>
+        </div>
 
-© 2026 F&H Aligners & Implant Dental Clinic
-
-</p>
-
-<div className="footer-links">
-
-<Link to="/whyus">
-
-About
-
-</Link>
-
-<Link to="/services">
-
-Services
-
-</Link>
-
-<Link to="/doctor">
-
-Doctors
-
-</Link>
-
-<Link to="/contact">
-
-Contact
-
-</Link>
-
-<Link to="/faq">
-
-FAQ
-
-</Link>
-
-
-</div>
-
-</div>
-
-</div>
-
-</footer>
-
-
-);
-
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;

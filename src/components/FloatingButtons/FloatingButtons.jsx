@@ -1,5 +1,12 @@
+
 import "./FloatingButtons.css";
-import { FaWhatsapp, FaPhoneAlt, FaArrowUp } from "react-icons/fa";
+
+import {
+  FaWhatsapp,
+  FaPhoneAlt,
+  FaArrowUp
+} from "react-icons/fa";
+
 import { useEffect, useState } from "react";
 
 function FloatingButtons() {
@@ -12,9 +19,13 @@ function FloatingButtons() {
       setShowTop(window.scrollY > 300);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
 
   }, []);
 
@@ -28,36 +39,38 @@ function FloatingButtons() {
   };
 
   return (
-
     <>
 
-      {/* WhatsApp */}
+      {/* WhatsApp Button */}
 
       <a
-        href="https://wa.me/91XXXXXXXXXX"
+        href="https://wa.me/919122266733"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         className="floating-btn whatsapp"
-        aria-label="WhatsApp"
+        aria-label="Chat with F&H Dental Clinic on WhatsApp"
       >
         <FaWhatsapp />
       </a>
 
-      {/* Call */}
+
+      {/* Call Button */}
 
       <a
-        href="tel:+91XXXXXXXXXX"
+        href="tel:+919122266733"
         className="floating-btn call"
-        aria-label="Call"
+        aria-label="Call F&H Dental Clinic"
       >
         <FaPhoneAlt />
       </a>
 
-      {/* Scroll Top */}
+
+      {/* Scroll To Top Button */}
 
       {showTop && (
 
         <button
+          type="button"
           className="floating-btn top"
           onClick={scrollTop}
           aria-label="Scroll to top"
@@ -68,7 +81,6 @@ function FloatingButtons() {
       )}
 
     </>
-
   );
 }
 

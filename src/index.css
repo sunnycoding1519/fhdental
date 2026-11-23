@@ -1,83 +1,281 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* ==============================
+   GLOBAL RESET
+============================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-scroll-behavior:smooth;
+/* ==============================
+   ROOT VARIABLES
+============================== */
+
+:root {
+  --gold: #C7A046;
+  --white: #ffffff;
+  --black: #111111;
+  --light: #f7f7f7;
+
+  --transition: 0.35s ease;
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+
+  --page-width: 1280px;
+  --page-padding: 5%;
 }
 
-body{
+/* ==============================
+   HTML & BODY
+============================== */
 
-font-family:"Poppins",sans-serif;
-
-background:#ffffff;
-
-color:#111111;
-
-overflow-x:hidden;
-
+html {
+  width: 100%;
+  scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
-a{
+body {
+  width: 100%;
+  min-width: 320px;
+  font-family: "Poppins", sans-serif;
+  background: var(--white);
+  color: var(--black);
+  overflow-x: clip;
 
-text-decoration:none;
-
-color:inherit;
-
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-img{
-
-display:block;
-
-max-width:100%;
-
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
 }
 
-ul{
+/* ==============================
+   LINKS
+============================== */
 
-list-style:none;
-
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
-button{
+/* ==============================
+   IMAGES & MEDIA
+============================== */
 
-cursor:pointer;
-
-font-family:"Poppins",sans-serif;
-
-border:none;
-
-outline:none;
-
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
 }
 
-.container{
-
-width:90%;
-
-max-width:1280px;
-
-margin:auto;
-
+img {
+  display: block;
+  height: auto;
 }
 
-:root{
+video,
+iframe {
+  display: block;
+}
 
---gold:#C7A046;
+/* ==============================
+   LISTS
+============================== */
 
---white:#ffffff;
+ul,
+ol {
+  list-style: none;
+}
 
---black:#111111;
+/* ==============================
+   BUTTONS & FORM ELEMENTS
+============================== */
 
---light:#f7f7f7;
+button,
+input,
+textarea,
+select {
+  font-family: "Poppins", sans-serif;
+  max-width: 100%;
+}
 
---transition:.35s ease;
+button {
+  cursor: pointer;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
 
---shadow:0 15px 40px rgba(0,0,0,.08);
+input,
+textarea,
+select {
+  width: 100%;
+}
 
+textarea {
+  resize: vertical;
+}
+
+/* ==============================
+   TYPOGRAPHY
+============================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+button,
+a {
+  overflow-wrap: break-word;
+}
+
+/* ==============================
+   KEYBOARD ACCESSIBILITY
+============================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* ==============================
+   GLOBAL CONTAINER
+============================== */
+
+.container {
+  width: 90%;
+  max-width: var(--page-width);
+  margin-inline: auto;
+}
+
+/* Prevent grid and flex children
+   from forcing overflow */
+
+.container > *,
+[class*="grid"] > *,
+[class*="flex"] > * {
+  min-width: 0;
+}
+
+/* ==============================
+   TABLET RESPONSIVENESS
+   1024px and below
+============================== */
+
+@media screen and (max-width: 1024px) {
+
+  :root {
+    --page-padding: 4%;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+/* ==============================
+   MOBILE RESPONSIVENESS
+   768px and below
+============================== */
+
+@media screen and (max-width: 768px) {
+
+  :root {
+    --page-padding: 5%;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: clamp(30px, 6vw, 42px);
+  }
+
+  h2 {
+    font-size: clamp(25px, 5vw, 34px);
+  }
+
+  h3 {
+    font-size: clamp(19px, 4vw, 25px);
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+/* ==============================
+   SMALL MOBILE
+   480px and below
+============================== */
+
+@media screen and (max-width: 480px) {
+
+  .container {
+    width: 92%;
+  }
+
+  h1 {
+    font-size: clamp(27px, 7.5vw, 34px);
+  }
+
+  h2 {
+    font-size: clamp(23px, 6vw, 29px);
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+/* ==============================
+   REDUCED MOTION ACCESSIBILITY
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
